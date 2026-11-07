@@ -94,6 +94,9 @@ export default function StoryPage() {
                     src={image.src}
                     alt={images[index]?.alt ?? ""}
                     loading="lazy"
+                    decoding="async"
+                    width={1000}
+                    height={750}
                     className="h-full w-full object-cover"
                   />
                   <span

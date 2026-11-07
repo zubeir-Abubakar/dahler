@@ -51,6 +51,10 @@
     "privacy": {
       "title": "Privacy – Dähler Früchte",
       "description": "How this website handles personal data: contact form, map service and hosting."
+    },
+    "notFound": {
+      "title": "Page not found – Dähler Früchte",
+      "description": "The requested page does not exist. Return to the Dähler Früchte home page."
     }
   },
   "home": {
@@ -515,7 +519,7 @@
       },
       {
         "title": "Contact form",
-        "text": "When you send the form you provide your name, company, email address, phone number, subject and message. These details are used solely to handle your enquiry and are sent to our inbox through an email service. No profiling takes place."
+        "text": "When you send the form you provide your name, company, email address, phone number, subject and message. These details are used solely to handle your enquiry and are transmitted through the Formspree form service. No profiling takes place."
       },
       {
         "title": "Map service",

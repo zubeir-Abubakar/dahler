@@ -33,7 +33,7 @@ page.on("response", (response) => {
   const status = response.status();
   const url = response.url();
   const thirdParty = /google|gstatic|googleapis/.test(url);
-  if (status >= 400 && !thirdParty && !url.includes("/api/contact")) {
+  if (status >= 400 && !thirdParty) {
     problems.push(`http ${status}: ${url}`);
   }
 });

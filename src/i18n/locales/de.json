@@ -51,6 +51,10 @@
     "privacy": {
       "title": "Datenschutz – Dähler Früchte",
       "description": "Wie diese Website mit personenbezogenen Daten umgeht: Kontaktformular, Kartendienst und Hosting."
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden – Dähler Früchte",
+      "description": "Die angeforderte Seite existiert nicht. Zurück zur Startseite von Dähler Früchte."
     }
   },
   "home": {
@@ -333,7 +337,7 @@
   },
   "about": {
     "eyebrow": "Über uns",
-    "title": "Unser Philosophie",
+    "title": "Unsere Philosophie",
     "intro": "Wir verstehen uns als kundennahen, marktorientierten und innovativen Volldienstleister.",
     "pillars": [
       {
@@ -515,7 +519,7 @@
       },
       {
         "title": "Kontaktformular",
-        "text": "Wenn Sie das Formular senden, übermitteln Sie Name, Firma, E-Mail-Adresse, Telefonnummer, Betreff und Nachricht. Diese Angaben werden ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet und über einen E-Mail-Dienst an unser Postfach gesendet. Es findet keine Profilbildung statt."
+        "text": "Wenn Sie das Formular senden, übermitteln Sie Name, Firma, E-Mail-Adresse, Telefonnummer, Betreff und Nachricht. Diese Angaben werden ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet und über den Formulardienst Formspree übermittelt. Es findet keine Profilbildung statt."
       },
       {
         "title": "Kartendienst",

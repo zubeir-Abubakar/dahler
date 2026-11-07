@@ -51,6 +51,10 @@
     "privacy": {
       "title": "Protection des données – Dähler Früchte",
       "description": "Comment ce site traite les données personnelles : formulaire de contact, service de cartographie et hébergement."
+    },
+    "notFound": {
+      "title": "Page introuvable – Dähler Früchte",
+      "description": "La page demandée n'existe pas. Retour à l'accueil de Dähler Früchte."
     }
   },
   "home": {
@@ -515,7 +519,7 @@
       },
       {
         "title": "Formulaire de contact",
-        "text": "Lorsque vous envoyez le formulaire, vous transmettez votre nom, votre entreprise, votre adresse e-mail, votre numéro de téléphone, le sujet et le message. Ces données servent uniquement à traiter votre demande et sont envoyées à notre boîte aux lettres via un service d'e-mail. Aucun profilage n'est effectué."
+        "text": "Lorsque vous envoyez le formulaire, vous transmettez votre nom, votre entreprise, votre adresse e-mail, votre numéro de téléphone, le sujet et le message. Ces données servent uniquement à traiter votre demande et sont transmises via le service de formulaires Formspree. Aucun profilage n'est effectué."
       },
       {
         "title": "Service de cartographie",

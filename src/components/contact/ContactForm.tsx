@@ -1,10 +1,15 @@
-import { useMemo, useRef, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
 
-import { company } from "@/data/company";
+/**
+ * Temporary demonstration inbox. A Formspree form ID is public by design: it is
+ * not a secret and grants nothing beyond accepting submissions for this form.
+ * Replace this constant (or point it at an env-injected value) before launch.
+ */
+export const FORMSPREE_ENDPOINT = "https://formspree.io/f/xeaeylry";
 
-type FormStatus = "idle" | "sending" | "success" | "error" | "not_configured";
+type FormStatus = "idle" | "sending" | "success" | "error";
 
 interface FormValues {
   name: string;
@@ -26,6 +31,16 @@ const initialValues: FormValues = {
   message: "",
 };
 
+/** Order used to move focus to the first invalid field. */
+const fieldOrder: Array<keyof FormValues> = [
+  "name",
+  "company",
+  "email",
+  "phone",
+  "subject",
+  "message",
+];
+
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
 export default function ContactForm() {
@@ -34,8 +49,10 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<FormStatus>("idle");
   const [touched, setTouched] = useState<Partial<Record<keyof FormValues, boolean>>>({});
-  const startedAt = useRef(Date.now());
   const honeypotRef = useRef<HTMLInputElement>(null);
+  const statusRef = useRef<HTMLDivElement>(null);
+  // A ref guards against a second submit arriving before React re-renders.
+  const inFlight = useRef(false);
 
   const rules = useMemo(
     () => ({
@@ -70,7 +87,7 @@ export default function ContactForm() {
 
   const validateAll = (): FieldErrors => {
     const next: FieldErrors = {};
-    (Object.keys(values) as Array<keyof FormValues>).forEach((field) => {
+    fieldOrder.forEach((field) => {
       const error = validateField(field, values[field]);
       if (error) next[field] = error;
     });
@@ -80,6 +97,7 @@ export default function ContactForm() {
   const update = (field: keyof FormValues) => (event: { target: { value: string } }) => {
     const value = event.target.value;
     setValues((current) => ({ ...current, [field]: value }));
+    if (status === "error") setStatus("idle");
     if (touched[field]) {
       setErrors((current) => ({ ...current, [field]: validateField(field, value) }));
     }
@@ -92,6 +110,8 @@ export default function ContactForm() {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (inFlight.current) return;
+
     const nextErrors = validateAll();
     setErrors(nextErrors);
     setTouched({
@@ -103,41 +123,60 @@ export default function ContactForm() {
       message: true,
     });
 
-    if (Object.keys(nextErrors).length > 0) return;
+    if (Object.keys(nextErrors).length > 0) {
+      const firstInvalid = fieldOrder.find((field) => nextErrors[field]);
+      if (firstInvalid) document.getElementById(`contact-${firstInvalid}`)?.focus();
+      return;
+    }
 
+    // Honeypot: a human never fills this. Bots are dropped without a request.
+    if (honeypotRef.current?.value) return;
+
+    inFlight.current = true;
     setStatus("sending");
 
+    const payload = new FormData();
+    payload.append("name", values.name.trim());
+    payload.append("company", values.company.trim());
+    payload.append("email", values.email.trim());
+    payload.append("phone", values.phone.trim());
+    payload.append("subject", values.subject.trim());
+    payload.append("message", values.message.trim());
+    payload.append("_subject", `Website enquiry: ${values.subject.trim()}`);
+    payload.append("_gotcha", "");
+    payload.append("locale", i18n.resolvedLanguage ?? i18n.language);
+
     try {
-      const response = await fetch("/api/contact", {
+      // Multipart upload keeps this a CORS-safelisted request (no preflight).
+      // `Accept: application/json` makes Formspree answer with JSON instead of
+      // redirecting to its hosted thank-you page.
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...values,
-          locale: i18n.resolvedLanguage ?? i18n.language,
-          website: honeypotRef.current?.value ?? "",
-          startedAt: startedAt.current,
-        }),
+        headers: { Accept: "application/json" },
+        body: payload,
       });
+      const result = (await response.json().catch(() => null)) as { ok?: boolean } | null;
 
-      // A static host may answer unknown POSTs with index.html and a 200. Only a
-      // JSON body with { ok: true } counts as delivered — never a blank success.
-      const payload = (await response.json().catch(() => null)) as
-        | { ok?: boolean; code?: string }
-        | null;
-
-      if (response.ok && payload?.ok === true) {
+      // Only a 2xx answer from Formspree counts as delivered.
+      if (response.ok && result?.ok !== false) {
         setStatus("success");
         setValues(initialValues);
         setTouched({});
-        startedAt.current = Date.now();
         return;
       }
 
-      setStatus(payload?.code === "not_configured" ? "not_configured" : "error");
+      setStatus("error");
     } catch {
       setStatus("error");
+    } finally {
+      inFlight.current = false;
     }
   };
+
+  // Announce and focus the result so keyboard and screen-reader users notice it.
+  useEffect(() => {
+    if (status === "success" || status === "error") statusRef.current?.focus();
+  }, [status]);
 
   const fieldProps = (field: keyof FormValues) => ({
     id: `contact-${field}`,
@@ -153,7 +192,7 @@ export default function ContactForm() {
   const busy = status === "sending";
 
   return (
-    <form onSubmit={onSubmit} noValidate className="flex flex-col gap-5">
+    <form onSubmit={onSubmit} noValidate aria-busy={busy} className="flex flex-col gap-5">
       <div>
         <h2 className="type-h2">{t("contact.form.title")}</h2>
         <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink-soft">
@@ -237,10 +276,17 @@ export default function ContactForm() {
         ) : null}
       </div>
 
-      {/* Honeypot: invisible to people, irresistible to bots. */}
+      {/* Honeypot: invisible to people, irresistible to bots. Formspree reads _gotcha. */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
         <label htmlFor="contact-website">Website</label>
-        <input ref={honeypotRef} id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+        <input
+          ref={honeypotRef}
+          id="contact-website"
+          name="_gotcha"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
       </div>
 
       <div className="flex flex-wrap items-center gap-4">
@@ -257,28 +303,26 @@ export default function ContactForm() {
         </p>
       </div>
 
-      <div aria-live="polite" role="status">
+      <div ref={statusRef} tabIndex={-1} className="outline-none">
         {status === "success" ? (
-          <p className="flex items-start gap-2 rounded-xl border border-leaf/30 bg-accent-soft/60 p-4 text-sm text-forest">
+          <p
+            role="status"
+            className="flex items-start gap-2 rounded-xl border border-leaf/30 bg-accent-soft/60 p-4 text-sm text-forest"
+          >
             <CheckCircle2 aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.8} />
             {t("contact.form.success")}
           </p>
         ) : null}
         {status === "error" ? (
-          <p className="flex items-start gap-2 rounded-xl border border-crimson/30 bg-crimson/5 p-4 text-sm text-crimson">
+          <p
+            role="alert"
+            className="flex items-start gap-2 rounded-xl border border-crimson/30 bg-crimson/5 p-4 text-sm text-crimson"
+          >
             <AlertCircle aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.8} />
             {t("contact.form.error")}
           </p>
         ) : null}
-        {status === "not_configured" ? (
-          <p className="flex items-start gap-2 rounded-xl border border-crimson/30 bg-crimson/5 p-4 text-sm text-crimson">
-            <AlertCircle aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.8} />
-            {t("contact.form.notConfigured")}
-          </p>
-        ) : null}
       </div>
-
-      <p className="sr-only">{company.legalName}</p>
     </form>
   );
 }

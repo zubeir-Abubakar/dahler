@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
@@ -15,6 +15,8 @@ export default function Header() {
   const reduceMotion = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 28);
@@ -33,12 +35,43 @@ export default function Header() {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
+    const menuFocusables = () =>
+      Array.from(
+        menuRef.current?.querySelectorAll<HTMLElement>("a[href], button:not([disabled])") ?? [],
+      );
+    // The close button lives in the header, so the trap includes the trigger.
+    const trapFocusables = () => {
+      const inMenu = menuFocusables();
+      return menuButtonRef.current ? [menuButtonRef.current, ...inMenu] : inMenu;
+    };
+
+    const focusTimer = window.setTimeout(() => menuFocusables()[0]?.focus(), 40);
+
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMenuOpen(false);
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+        return;
+      }
+      if (event.key !== "Tab") return;
+
+      const items = trapFocusables();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     };
     document.addEventListener("keydown", onKeyDown);
 
     return () => {
+      window.clearTimeout(focusTimer);
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", onKeyDown);
     };
@@ -99,8 +132,16 @@ export default function Header() {
               <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.7} />
             </Link>
             <button
+              ref={menuButtonRef}
               type="button"
-              onClick={() => setMenuOpen((value) => !value)}
+              onClick={() => {
+                if (menuOpen) {
+                  setMenuOpen(false);
+                  menuButtonRef.current?.focus();
+                } else {
+                  setMenuOpen(true);
+                }
+              }}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               aria-label={menuOpen ? t("nav.closeMenu") : t("nav.openMenu")}
@@ -123,8 +164,12 @@ export default function Header() {
       <AnimatePresence>
         {menuOpen ? (
           <motion.div
+            ref={menuRef}
             id="mobile-menu"
             key="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label={t("nav.menu")}
             initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}

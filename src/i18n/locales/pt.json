@@ -51,6 +51,10 @@
     "privacy": {
       "title": "Proteção de dados – Dähler Früchte",
       "description": "Como este site trata dados pessoais: formulário de contato, serviço de mapas e hospedagem."
+    },
+    "notFound": {
+      "title": "Página não encontrada – Dähler Früchte",
+      "description": "A página solicitada não existe. Volte à página inicial da Dähler Früchte."
     }
   },
   "home": {
@@ -515,7 +519,7 @@
       },
       {
         "title": "Formulário de contato",
-        "text": "Ao enviar o formulário, você transmite nome, empresa, e-mail, telefone, assunto e mensagem. Esses dados são usados exclusivamente para responder à sua solicitação e enviados à nossa caixa de entrada por um serviço de e-mail. Não há criação de perfis."
+        "text": "Ao enviar o formulário, você transmite nome, empresa, e-mail, telefone, assunto e mensagem. Esses dados são usados exclusivamente para responder à sua solicitação e enviados por meio do serviço de formulários Formspree. Não há criação de perfis."
       },
       {
         "title": "Serviço de mapas",

@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { useSeo } from "@/lib/seo";
 
 export default function NotFoundPage() {
-  useSeo("home");
+  useSeo("notFound", { noindex: true });
   const { t } = useTranslation();
 
   return (

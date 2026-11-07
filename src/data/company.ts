@@ -1,6 +1,8 @@
 /**
- * Verified company information, taken from daehler-fruechte.ch (Kontakt / Über uns).
- * Nothing here is inferred: no email address is published because none could be verified.
+ * Company information reproduced from daehler-fruechte.ch (Kontakt / Über uns).
+ * Nothing here is inferred: no email address is published because none could be
+ * verified. These values are not re-confirmed for this independent concept; see
+ * "Company data that still requires confirmation from Dähler" in README.md.
  */
 export const company = {
   brand: "Dähler Früchte",

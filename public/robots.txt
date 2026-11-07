@@ -1,0 +1,5 @@
+# Independent demonstration deployment of the Dähler Früchte website concept.
+User-agent: *
+Allow: /
+
+Sitemap: https://dahler-orcin.vercel.app/sitemap.xml
