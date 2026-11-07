@@ -1,0 +1,545 @@
+{
+  "nav": {
+    "home": "Início",
+    "products": "Produtos",
+    "services": "Serviços",
+    "about": "Sobre nós",
+    "story": "História & imagens",
+    "contact": "Contato",
+    "language": "Idioma",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "menu": "Menu"
+  },
+  "common": {
+    "brand": "Dähler Früchte",
+    "legalName": "Brasil Frucht Export AG",
+    "since": "Desde 1978",
+    "readMore": "Saiba mais",
+    "loading": "Enviando …",
+    "close": "Fechar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "skipToContent": "Ir para o conteúdo",
+    "fallbackNote": "Imagens: alternativas de licença livre, veja os créditos."
+  },
+  "seo": {
+    "home": {
+      "title": "Dähler Früchte – frutas exóticas, frutas e legumes do mundo todo",
+      "description": "Empresa familiar independente desde 1978: a Dähler Früchte importa e comercializa frutas e legumes exóticos e entrega diariamente a partir de Raperswilen em toda a Suíça."
+    },
+    "products": {
+      "title": "Produtos – Dähler Früchte",
+      "description": "Toda a linha: abacaxi, manga, mamão, abacate, lichia, maracujá, melões e muito mais – além de abacaxi crownless, mangas XL e melões XL para clientes industriais."
+    },
+    "services": {
+      "title": "Serviços – Dähler Früchte",
+      "description": "Compra internacional, importação direta de ultramar, maturação própria, embalagem e etiquetagem, câmara fria, logística própria e segurança alimentar Global G.A.P."
+    },
+    "about": {
+      "title": "Sobre nós – Dähler Früchte",
+      "description": "Um prestador de serviços completo, próximo do cliente, orientado ao mercado e inovador: nossa filosofia, cinco princípios e a máxima «O cliente não precisa de nós, mas nós precisamos do cliente»."
+    },
+    "story": {
+      "title": "História da Dähler – Dähler Früchte",
+      "description": "De Nova York a Bahia até Raperswilen: a história de Marius Dähler, da exportação de mamão do Brasil e da construção da Dähler Früchte."
+    },
+    "contact": {
+      "title": "Contato – Dähler Früchte",
+      "description": "Brasil Frucht Export AG, Eichhof, 8558 Raperswilen. Telefone +41 (0)44 448 22 50. Formulário de contato, equipe e mapa."
+    },
+    "privacy": {
+      "title": "Proteção de dados – Dähler Früchte",
+      "description": "Como este site trata dados pessoais: formulário de contato, serviço de mapas e hospedagem."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Raperswilen, Turgóvia · Desde 1978",
+      "title": "Frutas exóticas frescas, todos os dias em toda a Suíça.",
+      "text": "Importamos e comercializamos frutas e legumes do mundo inteiro – e os entregamos diariamente a partir da nossa unidade em Raperswilen para grandes redes, atacadistas e o varejo independente.",
+      "primary": "Conhecer a linha",
+      "secondary": "Conhecer a empresa",
+      "imageAlt": "Banca de frutas exóticas em um mercado"
+    },
+    "intro": {
+      "eyebrow": "Empresa familiar independente",
+      "title": "Bem-vindos.",
+      "body": [
+        "Somos uma empresa familiar independente, ativa com sucesso desde 1978 no comércio e na importação de frutas. A partir da nossa unidade central em Raperswilen, fornecemos diariamente produtos frescos para grandes redes, atacadistas e clientes de atacado, além de varejistas independentes em toda a Suíça.",
+        "Frutas e legumes exóticos são a nossa paixão – do cultivo à maturação até a entrega na sua doca."
+      ],
+      "facts": [
+        { "label": "Fundação", "value": "1978" },
+        { "label": "Sede", "value": "Raperswilen, Turgóvia" },
+        { "label": "Entrega", "value": "Todos os dias em toda a Suíça" }
+      ],
+      "cta": "Nossa história"
+    },
+    "products": {
+      "eyebrow": "Linha",
+      "title": "O que movimentamos todos os dias",
+      "text": "Cerca de quarenta exóticos, frutas e legumes – selecionados por maturação, cor e sabor. E o que é certo para os nossos clientes industriais.",
+      "cta": "Ver todos os produtos",
+      "count": "produtos na linha"
+    },
+    "services": {
+      "eyebrow": "Serviços",
+      "title": "Do campo à sua doca",
+      "text": "Compra, importação, maturação, embalagem e distribuição – como prestador completo, cuidamos de toda a cadeia.",
+      "cta": "Todos os serviços",
+      "items": [
+        {
+          "title": "Compra internacional",
+          "text": "Direto da produção e de pré-fornecedores – a melhor política pelo melhor preço."
+        },
+        {
+          "title": "Importação direta de ultramar",
+          "text": "Mamão, gengibre, mangas, limões, além de uvas e maçãs do Brasil, por navio ou avião."
+        },
+        {
+          "title": "Maturação própria",
+          "text": "Abacates, mangas e mamões no ponto de maturação desejado – graças à nossa câmara de maturação."
+        },
+        {
+          "title": "Logística e cadeia de frio",
+          "text": "Caminhões próprios, motoristas experientes e entrega diária em todas as regiões."
+        }
+      ]
+    },
+    "philosophy": {
+      "eyebrow": "Filosofia",
+      "title": "Para cada cliente, a sua solução.",
+      "text": "Cinco princípios orientam o nosso trabalho. Nossos produtos, projetos e serviços são voltados aos objetivos dos nossos clientes.",
+      "items": ["Qualidade", "Preços", "Logística", "Sustentabilidade", "Transparência"],
+      "cta": "Sobre nós"
+    },
+    "quote": {
+      "text": "O cliente não precisa de nós, mas nós precisamos do cliente.",
+      "author": "Marius Dähler",
+      "role": "Proprietário e diretor"
+    },
+    "story": {
+      "eyebrow": "História",
+      "title": "De Nova York a Bahia, e depois Raperswilen",
+      "text": "Aos dezoito anos, Marius Dähler chegou a Nova York. Uma hepatite o levou de volta à Turgóvia após três meses. O que veio a seguir é uma história de mamões, de uma capela na Bahia e de uma fábrica de laticínios.",
+      "cta": "Ler a história completa"
+    },
+    "gallery": {
+      "eyebrow": "Imagens",
+      "title": "Um olhar sobre o nosso mundo",
+      "text": "Frutas, origens e ofício – imagens do dia a dia de um comércio de frutas.",
+      "cta": "Ir para a galeria"
+    }
+  },
+  "products": {
+    "eyebrow": "Linha",
+    "title": "Nossos produtos",
+    "intro": "Exóticos, frutas e legumes do mundo inteiro. Nossos produtos são selecionados especialmente por sua maturação, cor e sabor.",
+    "searchLabel": "Buscar produto",
+    "searchPlaceholder": "p. ex. manga ou limão",
+    "filterLabel": "Filtrar por categoria",
+    "clearSearch": "Limpar busca",
+    "resultCount": "{{count}} produtos",
+    "empty": "Nenhum produto encontrado.",
+    "emptyHint": "Tente outro termo ou selecione todas as categorias.",
+    "reset": "Redefinir filtros",
+    "categories": {
+      "all": "Todos",
+      "fruit": "Frutas",
+      "vegetables": "Legumes e folhas",
+      "juice": "Sucos",
+      "industrial": "Clientes industriais"
+    },
+    "items": {
+      "ananas": "Abacaxi",
+      "baby-ananas": "Mini abacaxi",
+      "avocados": "Abacates",
+      "bananenblaetter": "Folhas de bananeira",
+      "chilischoten": "Pimentas",
+      "granataepfel": "Romãs",
+      "granadillas": "Granadilhas",
+      "guaven": "Goiabas",
+      "ingwer": "Gengibre",
+      "kaki": "Caqui",
+      "kaktusfeigen": "Figos-da-índia",
+      "karambolen": "Carambolas",
+      "kiwi-gruen": "Kiwi verde",
+      "kiwi-gold": "Kiwi gold",
+      "kokosnuesse": "Cocos",
+      "limesblaetter": "Folhas de limão-kaffir",
+      "litschis": "Lichias",
+      "mango": "Manga",
+      "mangostan": "Mangostão",
+      "maracuja": "Maracujá",
+      "mini-mais": "Mini milho",
+      "okra": "Quiabo",
+      "passionsfruechte": "Maracujás",
+      "physalis": "Physalis",
+      "pitahaya": "Pitaia",
+      "papayas": "Mamões",
+      "formosa": "Formosa",
+      "rambutan": "Rambutã",
+      "suesskartoffel": "Batata-doce",
+      "tamarillos": "Tamarilho",
+      "tamarinden": "Tamarindo",
+      "zitronen": "Limões",
+      "zitronengras": "Capim-limão",
+      "orangensaft": "Suco de laranja",
+      "orangen-tafel": "Laranjas de mesa",
+      "trauben": "Uvas",
+      "melonen-galia": "Melões Galia / Charentais",
+      "honigmelonen": "Melões mel e melancias",
+      "wassermelonen": "Melancias",
+      "ananas-crownless": "Abacaxi Crownless",
+      "mango-xl": "Manga Extra Large",
+      "melonen-xl": "Melões Extra Large"
+    },
+    "industrial": {
+      "eyebrow": "Para os nossos clientes industriais",
+      "title": "O produto certo para o seu processamento",
+      "items": [
+        {
+          "name": "Abacaxi Crownless",
+          "text": "Sem coroa, pronto para o processamento."
+        },
+        {
+          "name": "Manga Extra Large",
+          "text": "Entregue no ponto de maturação desejado."
+        },
+        {
+          "name": "Melões Extra Large",
+          "text": "Para cozinhas, grandes consumidores e processamento."
+        }
+      ]
+    },
+    "quality": {
+      "eyebrow": "Qualidade",
+      "title": "Qualidade é obra humana",
+      "items": [
+        {
+          "title": "Para nós vale mais do que um certificado",
+          "paragraphs": [
+            "Para nós, qualidade é mais do que a avaliação de um instituto independente. Qualidade é, acima de tudo, uma questão de mentalidade – uma forma de pensar e agir em todas as áreas da nossa organização.",
+            "Qualidade não significa apenas uma operação estável e higiênica e um bom produto. Também nos nossos serviços os padrões são elevados. Por meio da nossa rede internacional, compramos os produtos adequados em tempo hábil. Aconselhamos você pessoalmente e com conhecimento e nos esforçamos ainda mais quando você quer se destacar com um produto especial – nesse caso, tentamos entregar com frescor absoluto. Em toda a Suíça."
+          ]
+        },
+        {
+          "title": "Mais sabor e durabilidade graças à colheita ajustada",
+          "paragraphs": [
+            "Nossos produtos são selecionados especialmente por sua maturação, cor e sabor. Em média, nossas mangas e mamões são colhidos duas semanas mais tarde do que a manga ou o mamão médio do mercado. Por isso temos teores de açúcar mais elevados e uma boa experiência de sabor após a maturação. Também duram mais e têm melhor sabor."
+          ]
+        },
+        {
+          "title": "Qualidade «ready-to-eat»",
+          "paragraphs": [
+            "O foco constante em otimizar o nosso «ready-to-eat» é uma das razões pelas quais cada vez mais clientes nos escolhem como parceiros para entregar diariamente esses exóticos maturados. O tempo e a energia que a nossa maturação dedica todos os dias fazem a diferença em qualidade e maturação.",
+            "Cada país de origem e cada produtor matura de forma diferente, e isso significa que precisamos cuidar constantemente das câmaras de maturação. Cortamos frutas continuamente para encontrar o momento exato, interromper o processo e embalar e carregar para os nossos clientes. Não é uma tarefa simples. Esses segredos nos ajudam a garantir um produto muito melhor, com maior durabilidade e qualidade de consumo fantástica."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Não encontrou o que procura?",
+      "text": "Nossa rede alcança os cinco continentes. Diga o que você precisa – compramos em tempo hábil e aconselhamos pessoalmente.",
+      "button": "Entrar em contato"
+    }
+  },
+  "services": {
+    "eyebrow": "Serviços",
+    "title": "Nossos serviços",
+    "intro": "Atendemos nossos clientes 365 dias por ano com toda a linha de exóticos e legumes.",
+    "items": [
+      {
+        "id": "sourcing",
+        "title": "Compra internacional",
+        "paragraphs": [
+          "Compramos nossos produtos diretamente da produção e também de pré-fornecedores – a melhor política pelo melhor preço. Com uma logística profissional em todo o mundo, os produtos chegam em pouquíssimo tempo à Suíça e rapidamente aos nossos clientes."
+        ]
+      },
+      {
+        "id": "import",
+        "title": "Importação direta de ultramar",
+        "paragraphs": [
+          "A Dähler Früchte é o ponto central da importação de exóticos de ultramar. Nossa ampla oferta, por navio ou avião, inclui mamão Gold, mamão Formosa, gengibre, mangas e limões e, há anos, também uvas e maçãs do Brasil."
+        ]
+      },
+      {
+        "id": "distribution",
+        "title": "Distribuição em toda a Suíça",
+        "paragraphs": [
+          "Entregamos diariamente em todas as regiões da Suíça exóticos, frutas e legumes. Grandes redes como Globus, Migros e Spar, além de numerosos atacadistas para o comércio especializado, o varejo e a gastronomia, estão entre os nossos clientes."
+        ]
+      },
+      {
+        "id": "ripening",
+        "title": "Maturação própria",
+        "paragraphs": [
+          "Entregamos abacates, mangas e mamões no ponto de maturação desejado. Uma câmara de maturação própria facilita o planejamento e o alinhamento e nos permite alcançar quase qualquer ponto de maturação solicitado."
+        ]
+      },
+      {
+        "id": "packing",
+        "title": "Embalagem e etiquetagem",
+        "paragraphs": [
+          "Embalar e etiquetar individualmente em diferentes recipientes e tamanhos de frutas também está entre os nossos pontos fortes."
+        ]
+      },
+      {
+        "id": "storage",
+        "title": "Câmara fria e armazém",
+        "paragraphs": [
+          "Recebemos todas as nossas importações primeiro na nossa câmara fria em Raperswilen. Diferentes temperaturas de armazenamento e uma câmara de maturação garantem o tratamento correto das frutas."
+        ]
+      },
+      {
+        "id": "logistics",
+        "title": "Transporte e logística",
+        "paragraphs": [
+          "Com nossos próprios caminhões, atendemos nossos clientes uma a duas vezes por dia. Nossos motoristas conhecem literalmente cada rua e cada rampa.",
+          "Operadores logísticos especializados em frutas e transportadores especiais carregam diariamente na nossa sede em Raperswilen para entregas em toda a Suíça no dia seguinte."
+        ]
+      },
+      {
+        "id": "quality",
+        "title": "Qualidade e segurança alimentar",
+        "paragraphs": [
+          "Qualidade é a nossa tarefa central em todas as áreas. Para oferecer diariamente aos clientes qualidade controlada, estamos sempre no nosso país produtor, o Brasil, próximos do produto. Assim, controlamos a qualidade continuamente e acompanhamos o «ciclo de vida» dos nossos exóticos, do crescimento no campo à entrega ao cliente, passando pela colheita e embalagem.",
+          "Como a qualidade dos nossos produtos é importante para nós, além do acompanhamento e da orientação dos nossos produtores engajados no local, os controles regulares e as análises laboratoriais são uma obrigação."
+        ]
+      },
+      {
+        "id": "food-safety",
+        "title": "Global G.A.P. e segurança alimentar",
+        "paragraphs": [
+          "Trabalhamos principalmente com produtores e fornecedores certificados pelo Global G.A.P. O Global G.A.P. é a certificação mais reconhecida do mundo para garantir a segurança alimentar. Ela assegura que os produtores sigam as Boas Práticas Agrícolas aceitas mundialmente.",
+          "Higiene pessoal, uso eficiente de recursos naturais, redução de defensivos agrícolas, controle de temperatura, prevenção de contaminação microbiológica e proteção da saúde e segurança no trabalho são apenas alguns pontos garantidos por essa certificação. Ela ajuda a assegurar que os produtos que processamos estejam em conformidade com a legislação da UE sobre resíduos químicos. Quando possível, nossos produtores aplicam o Manejo Integrado de Pragas – assim podem usar inimigos naturais em vez de produtos químicos durante a produção."
+        ]
+      }
+    ],
+    "passion": {
+      "eyebrow": "Paixão",
+      "title": "Paixão e admiração pelo mundo exótico das frutas e legumes.",
+      "text": [
+        "Paixão e admiração pelo mundo exótico das frutas e legumes são o centro do nosso trabalho. Os clientes reconhecem a qualidade dos nossos produtos e valorizam a nossa busca pela perfeição.",
+        "Nosso desafio diário é entregar frutas e legumes exóticos da mais alta qualidade. Se olharmos apenas para o produto, não conseguiremos. Trata-se também da colaboração com nossos fornecedores, da construção da nossa cadeia e das condições de trabalho e de vida dos nossos colaboradores diretos e indiretos. Tudo isso é decisivo para oferecer produtos de alta qualidade."
+      ]
+    },
+    "cta": {
+      "title": "Pronto para a próxima entrega?",
+      "text": "Conte-nos sobre a sua necessidade. Verificamos disponibilidade e maturação e retornamos pessoalmente.",
+      "button": "Entrar em contato"
+    }
+  },
+  "about": {
+    "eyebrow": "Sobre nós",
+    "title": "Nossa filosofia",
+    "intro": "Vemos a nós mesmos como um prestador de serviços completo, próximo do cliente, orientado ao mercado e inovador.",
+    "pillars": [
+      {
+        "id": "innovation",
+        "title": "Inovação",
+        "text": "Procuramos soluções antes que os problemas apareçam. Ideias e desenvolvimentos novos são fundamentados e verificados antes de serem oferecidos aos clientes. Curiosidade e experiência única nos tornam parceiros inovadores e confiáveis."
+      },
+      {
+        "id": "dynamic",
+        "title": "Dinâmica",
+        "text": "Gostamos de nos mover pelo cliente. Mudanças de mercado não são um incômodo – pelo contrário: nos estimulam! Pedidos especiais ou obstáculos aparentemente intransponíveis nos colocam em grande forma. Quem nos conhece confirma isso."
+      },
+      {
+        "id": "heart",
+        "title": "O que nos é importante",
+        "text": "Ser cordiais, motivados e simples, pensar na perspectiva do cliente e ter consciência das particularidades dos produtos – é isso que nos distingue e realmente ajuda os nossos clientes."
+      },
+      {
+        "id": "global",
+        "title": "Pensar globalmente – agir localmente",
+        "text": "Atendemos a sua necessidade nos cinco continentes. Somos parceiros de longa data de produtores no mundo inteiro e os apoiamos com suporte, logística e embalagem. Graças aos nossos clientes fiéis, oferecemos aos produtores um potencial de venda atrativo e know-how. Operar no mundo todo é uma coisa – entregar no local é outra. Um equilíbrio que dominamos. Faça com a gente o movimento decisivo."
+      },
+      {
+        "id": "principles",
+        "title": "Para cada cliente, a sua solução: cinco princípios",
+        "text": "Qualidade, preços, logística, sustentabilidade e transparência orientam o nosso trabalho. Nossos produtos, projetos e serviços são voltados aos objetivos dos nossos clientes. Tentamos atender todos os desejos – seja uma etiqueta especial, rastreabilidade garantida ou embalagens específicas. Pelos nossos clientes empregamos todos os recursos, experiências, tempo e o nosso total empenho."
+      }
+    ],
+    "quote": {
+      "text": "O cliente não precisa de nós, mas nós precisamos do cliente.",
+      "cta": "Vamos encontrar juntos a sua solução."
+    },
+    "closing": {
+      "title": "Tradição e inovação no mundo todo.",
+      "text": "A simbiose entre o que já é comprovado e as novas tendências e valores é o que torna a nossa filosofia crível."
+    }
+  },
+  "story": {
+    "eyebrow": "História & imagens",
+    "title": "A história da Dähler",
+    "intro": "A história de Marius Dähler, escrita por Christine Hinnen.",
+    "chapters": [
+      {
+        "title": "Nova York",
+        "paragraphs": [
+          "Movido pelo desejo de ir longe, com noções básicas de inglês e a firme decisão de construir algo no país das oportunidades ilimitadas, esse agricultor de dezoito anos chegou a Nova York logo após o aprendizado. Seu francês perfeito, aprendido em Yverdon e no serviço militar em Romont, não ajudou muito. Mas ele havia emigrado para aprender inglês – e para fazer «algo com frutas», comércio ou produção «ou algo assim». Mal chegou à Big Apple, assumiu seu primeiro emprego no mercado central.",
+          "Marius Dähler certamente teria conseguido realizar seu sonho. Mas as coisas aconteceram de outra forma. Uma hepatite obrigou o jovem emigrante a voltar para Turgóvia após apenas três meses, para a propriedade Eggishof em Fruthwilen. Ali, o caçula de dez irmãos – quatro meninos e cinco meninas – viveu uma infância extraordinariamente feliz e protegida. «Foi um tempo maravilhoso, e desde pequeno eu sabia que todos nós tínhamos muita sorte», conta o homem de quarenta e quatro anos."
+        ]
+      },
+      {
+        "title": "Uma família fora do comum",
+        "paragraphs": [
+          "Os Dähler são uma família fora do comum – e uma espécie de história de sucesso do Mostindien. A pedra fundamental foi colocada pelo pai, que de pequeno agricultor de Appenzell se tornou proprietário de uma fazenda e foi para os filhos o maior exemplo, motivador e apoiador por toda a vida. Ele transmitiu a todos os cinco filhos o seu espírito empreendedor – e o amor pela agricultura.",
+          "O mais velho, Johann, não assumiu a fazenda sozinho, mas junto com os quatro irmãos. Ele foi atraído pela distância: ficou famoso como «rei do abacaxi» na Costa do Marfim e depois criou uma plantação de abacaxi na Costa Rica. Os irmãos Alois e Hermann dirigiam enquanto isso, em Fruthwilen, a Gebrüder Dähler AG, pela qual vendiam tanto os abacaxis de Johann quanto os sucos e mamões que o quarto irmão, Markus, exportava do Brasil para a Suíça."
+        ]
+      },
+      {
+        "title": "Mamões do Brasil",
+        "paragraphs": [
+          "Era justamente esse irmão cujos negócios começaram a vacilar. Marius, já recuperado e com o serviço militar concluído, foi enviado novamente para o outro lado do Atlântico – não para Nova York, mas para o Brasil ainda mais distante, para ajudar Markus.",
+          "Aos vinte e um anos, não falava uma palavra de português e não tinha um plano exato sobre o que o esperava. O que o esperava era muito trabalho. Pouco tempo depois, o irmão Markus deixou o Brasil e passou os negócios para Marius. Foi assim que começou a história da packing house de exportação de mamão dos Dähler: Marius visitava produtores, comprava as melhores qualidades, produzia ele mesmo embalagens de papelão atraentes e despachava tudo para a Suíça, onde os irmãos revendiam com sucesso crescente."
+        ]
+      },
+      {
+        "title": "O primeiro carregamento marítimo",
+        "paragraphs": [
+          "O que começou com algumas caixas de mamão tornou-se um negócio próspero. Na packing house recém-construída, Marius já embalava mamões também para outros comerciantes. Pouco depois, era preciso embarcar o primeiro semirreboque próprio de mamões. Para isso, as frutas tinham de percorrer toda a costa atlântica em um caminhão refrigerado, cerca de 2500 quilômetros de Salvador a Santos.",
+          "No início da viagem, Marius tentou desesperadamente convencer o motorista a finalmente ligar a refrigeração. Ele se recusou obstinadamente. Só depois de seis horas as preciosas frutas do sul foram novamente refrigeradas. Ao chegar a Santos, todos os mamões antes verdes já estavam amarelos – e ainda restavam quatorze dias de travessia. Marius, criado na fé católica, fez um acordo com Deus: se a carga chegasse sem grandes perdas e fosse vendida, construiria uma capela em sua propriedade perto de Salvador. A mercadoria vendeu-se muito bem na Suíça, com lucro inclusive. E na propriedade dos Dähler perto de Salvador existe hoje uma capela."
+        ]
+      },
+      {
+        "title": "A fábrica de laticínios",
+        "paragraphs": [
+          "Em 1993 houve a mudança de moeda no Brasil. Da noite para o dia, a exportação de frutas quase não dava mais lucro. Mas Marius Dähler não é do tipo que desiste – e, enquanto isso, seu segundo pilar havia se tornado sólido: uma fábrica de laticínios, que surgiu quase por acaso. O confeiteiro suíço de um hotel cinco estrelas vizinho pediu ajuda, porque o creme de leite no Brasil não atendia às suas exigências.",
+          "Com cem litros começou outra história de sucesso: alguns anos depois, a empresa, com um punhado de funcionários, produzia a partir de 15000 litros diários de leite de duzentos pequenos produtores da região leite fresco, creme, manteiga, mozzarella e iogurte, entregues no hotel vizinho e no mercado regional. A manteiga, Marius fazia como os moradores preferiam: colorida de amarelo e salgada. «Não preciso reinventar a roda. Preciso agir conforme o ambiente exige e conforme as peculiaridades locais pedem. E preciso produzir o que os clientes querem, não o que eu gosto. Porque o cliente não precisa de mim – mas eu preciso do cliente.»"
+        ]
+      },
+      {
+        "title": "Família no Brasil",
+        "paragraphs": [
+          "Para um jovem aberto, direto e determinado como ele, era apenas questão de tempo até se apaixonar por uma brasileira de temperamento forte, casar-se e, aos vinte e um anos, fundar a própria família. Aos vinte e oito, já era pai de quatro meninos, que tiveram uma infância tão boa e despreocupada quanto a dele.",
+          "Além dos negócios, Marius montou uma pequena fazenda – «só como hobby, alguns cavalos, um pouco de turismo, uma pequena plantação de mamão, mas apenas para consumo próprio». Um acidente dramático o marcou: um funcionário e amigo morreu no poço porque esqueceu de desligar a energia. Como Marius sempre tratou bem seus empregados, os pais do falecido desistiram de prestar queixa. «Nunca antes eu havia percebido com tanta clareza como é fundamental tratar todos os funcionários com respeito.»"
+        ]
+      },
+      {
+        "title": "Volta à Suíça",
+        "paragraphs": [
+          "Marius continuou o negócio por mais sete anos com frutas e sua fazenda leiteira, até decidir oferecer aos filhos uma boa educação na Suíça. Em 2000, alugou a fazenda leiteira e mudou-se com a família do Brasil para Turgóvia. Os meninos ficaram encantados: amavam o Lago de Constança e as estações até então desconhecidas.",
+          "Ao voltar, Marius teria gostado de trabalhar na empresa dos irmãos, mas eles tinham outros planos. Por isso fundou em Fruthwilen a sua própria empresa e importou frutas do Brasil. Em 2010, a empresa dos irmãos faliu. Marius assumiu a carteira de clientes e as instalações e construiu, junto com um sobrinho, outra empresa de sucesso."
+        ]
+      },
+      {
+        "title": "Hoje",
+        "paragraphs": [
+          "Nos galpões do Eichhof, perto de Raperswilen, acumulam-se mangas da Costa Rica e da Tailândia, mamões do Brasil, gengibre da China, mangas, pimentas, mini milho, manjericão thai, kiwis, limões, batatas-doces, abacaxis e muito mais. A Dähler fornece atacadistas como Globus, Migros, Denner e Spar; parte das entregas de frutas do sul segue também diretamente do aeroporto de Kloten para a Alemanha. Nos meses de inverno é alta temporada na Dähler; a partir de abril o movimento diminui.",
+          "Um dos segredos do seu sucesso é a modéstia e o enraizamento: ele não dá nada por garantido, tenta recomeçar do zero todas as manhãs e sabe que a confiança dos clientes é uma plantinha delicada que precisa ser cuidada diariamente. E agradece sinceramente por cada pedido. Ele perdeu o coração para o Brasil – «ainda estou sempre com um pé lá»."
+        ]
+      }
+    ],
+    "credit": "Texto: Christine Hinnen, www.woertlich.ch",
+    "gallery": {
+      "eyebrow": "Imagens",
+      "title": "Imagens do comércio de frutas",
+      "text": "Fotografias de frutas, origens e ofício. Clique em uma imagem para ampliá-la.",
+      "open": "Ampliar imagem",
+      "close": "Fechar galeria",
+      "counter": "{{current}} de {{total}}"
+    }
+  },
+  "contact": {
+    "eyebrow": "Contato",
+    "title": "Vamos falar da sua próxima entrega.",
+    "intro": "Grande rede, atacadista, gastronomia ou varejo independente: analisamos pessoalmente a sua necessidade e retornamos.",
+    "details": {
+      "title": "Brasil Frucht Export AG",
+      "address": "Endereço",
+      "phone": "Telefone",
+      "fax": "Fax",
+      "vat": "Nº IVA",
+      "addressValue": "Eichhof, 8558 Raperswilen, Suíça"
+    },
+    "team": {
+      "title": "Equipe",
+      "members": [
+        {
+          "name": "Marius Dähler",
+          "role": "Proprietário / diretor",
+          "focus": "Importação / vendas Suíça / Europa"
+        },
+        {
+          "name": "Markus Dähler jun.",
+          "role": "Direção",
+          "focus": "Vendas Suíça / Europa"
+        },
+        {
+          "name": "Marius Dähler jun.",
+          "role": "Diretor substituto / direção / conselho de administração",
+          "focus": "Compras internacionais e vendas Suíça"
+        }
+      ]
+    },
+    "form": {
+      "title": "Enviar mensagem",
+      "intro": "Campos marcados com * são obrigatórios. Usamos seus dados exclusivamente para responder à sua solicitação.",
+      "name": "Nome completo",
+      "company": "Empresa",
+      "email": "Endereço de e-mail",
+      "phone": "Telefone",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "optional": "opcional",
+      "submit": "Enviar mensagem",
+      "sending": "Enviando …",
+      "success": "Obrigado pela sua mensagem. Retornaremos o quanto antes.",
+      "error": "Não foi possível enviar a mensagem. Tente novamente mais tarde ou ligue para nós.",
+      "notConfigured": "O envio de e-mails ainda não está configurado neste servidor. Ligue para +41 (0)44 448 22 50.",
+      "validation": {
+        "required": "Preencha este campo.",
+        "email": "Informe um endereço de e-mail válido.",
+        "minLength": "Escreva pelo menos {{min}} caracteres.",
+        "maxLength": "Use no máximo {{max}} caracteres."
+      }
+    },
+    "map": {
+      "title": "Nossa localização",
+      "text": "Eichhof, 8558 Raperswilen, na Turgóvia – nossa unidade e câmara fria.",
+      "directions": "Rota no Google Maps",
+      "iframeTitle": "Mapa do Google: Brasil Frucht Export AG, Eichhof, 8558 Raperswilen"
+    }
+  },
+  "privacy": {
+    "eyebrow": "Informações legais",
+    "title": "Proteção de dados",
+    "intro": "Esta página descreve os dados tratados por este site. Ela não substitui uma análise jurídica pela empresa.",
+    "sections": [
+      {
+        "title": "Responsável pelo tratamento",
+        "text": "Brasil Frucht Export AG, Eichhof, 8558 Raperswilen, Suíça. Telefone +41 (0)44 448 22 50."
+      },
+      {
+        "title": "Formulário de contato",
+        "text": "Ao enviar o formulário, você transmite nome, empresa, e-mail, telefone, assunto e mensagem. Esses dados são usados exclusivamente para responder à sua solicitação e enviados à nossa caixa de entrada por um serviço de e-mail. Não há criação de perfis."
+      },
+      {
+        "title": "Serviço de mapas",
+        "text": "A página de contato incorpora um mapa do Google Maps. Ao carregar, dados como o seu endereço IP são transmitidos ao Google. O fornecedor é a Google Ireland Limited."
+      },
+      {
+        "title": "Cookies e análise",
+        "text": "Este site não usa cookies de análise ou marketing. O idioma escolhido é salvo apenas localmente no seu navegador."
+      }
+    ],
+    "back": "Voltar ao início"
+  },
+  "footer": {
+    "intro": "Empresa familiar independente de comércio e importação de frutas – desde 1978, de Raperswilen para toda a Suíça.",
+    "navigation": "Navegação",
+    "contact": "Contato",
+    "language": "Idioma",
+    "rights": "Todos os direitos reservados.",
+    "privacy": "Proteção de dados",
+    "note": "Imagens: alternativas de licença livre – os créditos estão no projeto em public/images/CREDITS.md."
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "text": "A página solicitada não existe ou foi movida.",
+    "cta": "Voltar ao início"
+  }
+}
