@@ -51,7 +51,6 @@ export const products: Product[] = [
   { id: "trauben", category: "fruit", image: "/images/products/trauben.jpg" },
   { id: "melonen-galia", category: "fruit", image: "/images/products/melonen-galia.jpg" },
   { id: "honigmelonen", category: "fruit", image: "/images/products/honigmelonen.jpg" },
-  { id: "wassermelonen", category: "fruit", image: "/images/products/wassermelonen.jpg" },
   {
     id: "ananas-crownless",
     category: "industrial",

@@ -13,7 +13,6 @@
   },
   "common": {
     "brand": "Dähler Früchte",
-    "legalName": "Brasil Frucht Export AG",
     "since": "Desde 1978",
     "readMore": "Saiba mais",
     "loading": "Enviando …",
@@ -46,7 +45,7 @@
     },
     "contact": {
       "title": "Contato – Dähler Früchte",
-      "description": "Brasil Frucht Export AG, Eichhof, 8558 Raperswilen. Telefone +41 (0)44 448 22 50. Formulário de contato, equipe e mapa."
+      "description": "Dähler Früchte, Eichhof, 8558 Raperswilen. Telefone +41 (0)44 448 22 50, info@daehler-fruechte.ch. Formulário de contato, equipe e mapa."
     },
     "privacy": {
       "title": "Proteção de dados – Dähler Früchte",
@@ -59,81 +58,47 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Raperswilen, Turgóvia · Desde 1978",
       "title": "Frutas exóticas frescas, todos os dias em toda a Suíça.",
-      "text": "Importamos e comercializamos frutas e legumes do mundo inteiro – e os entregamos diariamente a partir da nossa unidade em Raperswilen para grandes redes, atacadistas e o varejo independente.",
-      "primary": "Conhecer a linha",
-      "secondary": "Conhecer a empresa",
-      "imageAlt": "Banca de frutas exóticas em um mercado"
+      "text": "Importamos frutas e verduras exóticas de todo o mundo e as entregamos diariamente de Raperswilen para toda a Suíça.",
+      "primary": "Explorar a gama",
+      "secondary": "Conhecer a Dähler Früchte",
+      "imageAlt": "Banca de frutas exóticas no mercado"
     },
-    "intro": {
-      "eyebrow": "Empresa familiar independente",
-      "title": "Bem-vindos.",
-      "body": [
-        "Somos uma empresa familiar independente, ativa com sucesso desde 1978 no comércio e na importação de frutas. A partir da nossa unidade central em Raperswilen, fornecemos diariamente produtos frescos para grandes redes, atacadistas e clientes de atacado, além de varejistas independentes em toda a Suíça.",
-        "Frutas e legumes exóticos são a nossa paixão – do cultivo à maturação até a entrega na sua doca."
-      ],
-      "facts": [
-        { "label": "Fundação", "value": "1978" },
-        { "label": "Sede", "value": "Raperswilen, Turgóvia" },
-        { "label": "Entrega", "value": "Todos os dias em toda a Suíça" }
-      ],
-      "cta": "Nossa história"
+    "highlights": {
+      "title": "A empresa em resumo",
+      "founded": {
+        "label": "Fundação",
+        "value": "1978",
+        "detail": "Empresa familiar independente"
+      },
+      "location": {
+        "label": "Localização",
+        "value": "Raperswilen",
+        "detail": "Turgóvia, Suíça"
+      },
+      "delivery": {
+        "label": "Entrega",
+        "value": "Suíça",
+        "detail": "Diariamente a varejistas e atacadistas"
+      }
     },
     "products": {
-      "eyebrow": "Linha",
-      "title": "O que movimentamos todos os dias",
-      "text": "Cerca de quarenta exóticos, frutas e legumes – selecionados por maturação, cor e sabor. E o que é certo para os nossos clientes industriais.",
-      "cta": "Ver todos os produtos",
-      "count": "produtos na linha"
+      "eyebrow": "Gama",
+      "title": "O que entregamos todos os dias",
+      "text": "Cerca de quarenta frutas exóticas, frutas e verduras – selecionadas por maturação, cor e sabor.",
+      "cta": "Ver todos os produtos"
     },
-    "services": {
-      "eyebrow": "Serviços",
-      "title": "Do campo à sua doca",
-      "text": "Compra, importação, maturação, embalagem e distribuição – como prestador completo, cuidamos de toda a cadeia.",
-      "cta": "Todos os serviços",
-      "items": [
-        {
-          "title": "Compra internacional",
-          "text": "Direto da produção e de pré-fornecedores – a melhor política pelo melhor preço."
-        },
-        {
-          "title": "Importação direta de ultramar",
-          "text": "Mamão, gengibre, mangas, limões, além de uvas e maçãs do Brasil, por navio ou avião."
-        },
-        {
-          "title": "Maturação própria",
-          "text": "Abacates, mangas e mamões no ponto de maturação desejado – graças à nossa câmara de maturação."
-        },
-        {
-          "title": "Logística e cadeia de frio",
-          "text": "Caminhões próprios, motoristas experientes e entrega diária em todas as regiões."
-        }
-      ]
+    "about": {
+      "eyebrow": "A empresa",
+      "title": "Em Raperswilen desde 1978.",
+      "text": "A Dähler Früchte é uma empresa familiar independente. Da nossa sede na Turgóvia fornecemos diariamente grandes redes, atacadistas e varejistas independentes em toda a Suíça.",
+      "cta": "Saiba mais",
+      "imageAlt": "Plantação de abacaxi"
     },
-    "philosophy": {
-      "eyebrow": "Filosofia",
-      "title": "Para cada cliente, a sua solução.",
-      "text": "Cinco princípios orientam o nosso trabalho. Nossos produtos, projetos e serviços são voltados aos objetivos dos nossos clientes.",
-      "items": ["Qualidade", "Preços", "Logística", "Sustentabilidade", "Transparência"],
-      "cta": "Sobre nós"
-    },
-    "quote": {
-      "text": "O cliente não precisa de nós, mas nós precisamos do cliente.",
-      "author": "Marius Dähler",
-      "role": "Proprietário e diretor"
-    },
-    "story": {
-      "eyebrow": "História",
-      "title": "De Nova York a Bahia, e depois Raperswilen",
-      "text": "Aos dezoito anos, Marius Dähler chegou a Nova York. Uma hepatite o levou de volta à Turgóvia após três meses. O que veio a seguir é uma história de mamões, de uma capela na Bahia e de uma fábrica de laticínios.",
-      "cta": "Ler a história completa"
-    },
-    "gallery": {
-      "eyebrow": "Imagens",
-      "title": "Um olhar sobre o nosso mundo",
-      "text": "Frutas, origens e ofício – imagens do dia a dia de um comércio de frutas.",
-      "cta": "Ir para a galeria"
+    "contact": {
+      "title": "Tem alguma pergunta?",
+      "text": "Verificamos disponibilidade e maturação e respondemos pessoalmente.",
+      "cta": "Fale conosco"
     }
   },
   "products": {
@@ -194,7 +159,6 @@
       "trauben": "Uvas",
       "melonen-galia": "Melões Galia / Charentais",
       "honigmelonen": "Melões mel e melancias",
-      "wassermelonen": "Melancias",
       "ananas-crownless": "Abacaxi Crownless",
       "mango-xl": "Manga Extra Large",
       "melonen-xl": "Melões Extra Large"
@@ -336,43 +300,55 @@
     }
   },
   "about": {
-    "eyebrow": "Sobre nós",
+    "eyebrow": "Quem somos",
     "title": "Nossa filosofia",
-    "intro": "Vemos a nós mesmos como um prestador de serviços completo, próximo do cliente, orientado ao mercado e inovador.",
+    "intro": "Nos consideramos um fornecedor completo próximo do cliente, orientado ao mercado e inovador.",
+    "portrait": {
+      "title": "Uma empresa familiar na Turgóvia.",
+      "body": [
+        "A Dähler Früchte é uma empresa familiar independente em Raperswilen, no cantão da Turgóvia. Desde 1978 comercializamos e importamos frutas e verduras de todo o mundo.",
+        "Da nossa sede entregamos diariamente a grandes redes, atacadistas e varejistas independentes em toda a Suíça. Frutas e verduras exóticas são a nossa paixão."
+      ],
+      "imageAlt": "Frutas de todo o mundo",
+      "cta": "Nossa história"
+    },
+    "principles": {
+      "eyebrow": "Princípios",
+      "title": "O que nos orienta",
+      "text": "Cinco princípios orientam o nosso trabalho, da compra à entrega na sua doca."
+    },
     "pillars": [
       {
         "id": "innovation",
         "title": "Inovação",
-        "text": "Procuramos soluções antes que os problemas apareçam. Ideias e desenvolvimentos novos são fundamentados e verificados antes de serem oferecidos aos clientes. Curiosidade e experiência única nos tornam parceiros inovadores e confiáveis."
+        "text": "Buscamos soluções antes que os problemas apareçam. Cada ideia nova é verificada a fundo antes de ser oferecida aos clientes."
       },
       {
         "id": "dynamic",
-        "title": "Dinâmica",
-        "text": "Gostamos de nos mover pelo cliente. Mudanças de mercado não são um incômodo – pelo contrário: nos estimulam! Pedidos especiais ou obstáculos aparentemente intransponíveis nos colocam em grande forma. Quem nos conhece confirma isso."
+        "title": "Dinamismo",
+        "text": "Mudanças no mercado não são um peso: nos desafiam. Pedidos especiais e obstáculos aparentemente intransponíveis nos levam ao nosso melhor."
       },
       {
         "id": "heart",
-        "title": "O que nos é importante",
-        "text": "Ser cordiais, motivados e simples, pensar na perspectiva do cliente e ter consciência das particularidades dos produtos – é isso que nos distingue e realmente ajuda os nossos clientes."
+        "title": "O que nos importa",
+        "text": "Gentis, motivados e diretos: pensamos do ponto de vista do cliente e conhecemos as particularidades de cada produto."
       },
       {
         "id": "global",
-        "title": "Pensar globalmente – agir localmente",
-        "text": "Atendemos a sua necessidade nos cinco continentes. Somos parceiros de longa data de produtores no mundo inteiro e os apoiamos com suporte, logística e embalagem. Graças aos nossos clientes fiéis, oferecemos aos produtores um potencial de venda atrativo e know-how. Operar no mundo todo é uma coisa – entregar no local é outra. Um equilíbrio que dominamos. Faça com a gente o movimento decisivo."
+        "title": "Pensar global, agir local",
+        "text": "Atendemos às suas necessidades nos cinco continentes e trabalhamos há anos com produtores do mundo todo. Comprar globalmente, entregar localmente."
       },
       {
         "id": "principles",
-        "title": "Para cada cliente, a sua solução: cinco princípios",
-        "text": "Qualidade, preços, logística, sustentabilidade e transparência orientam o nosso trabalho. Nossos produtos, projetos e serviços são voltados aos objetivos dos nossos clientes. Tentamos atender todos os desejos – seja uma etiqueta especial, rastreabilidade garantida ou embalagens específicas. Pelos nossos clientes empregamos todos os recursos, experiências, tempo e o nosso total empenho."
+        "title": "Uma solução para cada cliente",
+        "text": "Qualidade, preços, logística, sustentabilidade e transparência orientam o nosso comércio. Nossos serviços seguem os objetivos dos clientes."
       }
     ],
     "quote": {
       "text": "O cliente não precisa de nós, mas nós precisamos do cliente.",
-      "cta": "Vamos encontrar juntos a sua solução."
-    },
-    "closing": {
-      "title": "Tradição e inovação no mundo todo.",
-      "text": "A simbiose entre o que já é comprovado e as novas tendências e valores é o que torna a nossa filosofia crível."
+      "author": "Marius Dähler",
+      "role": "Proprietário e diretor",
+      "cta": "Vamos encontrar a sua solução juntos."
     }
   },
   "story": {
@@ -449,97 +425,115 @@
   },
   "contact": {
     "eyebrow": "Contato",
-    "title": "Vamos falar da sua próxima entrega.",
-    "intro": "Grande rede, atacadista, gastronomia ou varejo independente: analisamos pessoalmente a sua necessidade e retornamos.",
+    "title": "Vamos falar sobre a sua próxima entrega.",
+    "intro": "Grande rede, atacadista, restaurante ou varejista independente: analisamos sua solicitação pessoalmente e retornamos.",
     "details": {
-      "title": "Brasil Frucht Export AG",
+      "title": "Dähler Früchte",
       "address": "Endereço",
       "phone": "Telefone",
+      "email": "E-mail",
       "fax": "Fax",
-      "vat": "Nº IVA",
-      "addressValue": "Eichhof, 8558 Raperswilen, Suíça"
+      "vat": "Número de IVA"
     },
     "team": {
-      "title": "Equipe",
-      "members": [
-        {
-          "name": "Marius Dähler",
+      "eyebrow": "Seus contatos",
+      "title": "Seus contatos",
+      "intro": "Dúvidas sobre a gama, disponibilidade ou entrega? Fale diretamente conosco – respondemos pessoalmente.",
+      "phoneLabel": "Central",
+      "members": {
+        "marius": {
           "role": "Proprietário / diretor",
           "focus": "Importação / vendas Suíça / Europa"
         },
-        {
-          "name": "Markus Dähler jun.",
+        "markus": {
           "role": "Direção",
           "focus": "Vendas Suíça / Europa"
         },
-        {
-          "name": "Marius Dähler jun.",
-          "role": "Diretor substituto / direção / conselho de administração",
-          "focus": "Compras internacionais e vendas Suíça"
+        "marius-jun": {
+          "role": "Vice-diretor / direção / conselho de administração",
+          "focus": "Compras internacionais / vendas Suíça"
         }
-      ]
+      }
     },
     "form": {
-      "title": "Enviar mensagem",
-      "intro": "Campos marcados com * são obrigatórios. Usamos seus dados exclusivamente para responder à sua solicitação.",
+      "title": "Sua solicitação",
+      "intro": "Preencha o formulário e retornaremos pessoalmente. Os campos com * são obrigatórios.",
       "name": "Nome completo",
       "company": "Empresa",
       "email": "Endereço de e-mail",
       "phone": "Telefone",
-      "subject": "Assunto",
+      "enquiry": "Tipo de solicitação",
+      "enquiryPlaceholder": "Selecione",
+      "enquiryTypes": {
+        "general": "Solicitação geral",
+        "product": "Solicitação de produto",
+        "availability": "Disponibilidade de produto",
+        "partnership": "Parceria comercial",
+        "supplier": "Solicitação de fornecedor",
+        "logistics": "Logística e entrega",
+        "other": "Outro"
+      },
+      "productInterest": "Produto",
+      "productInterestPlaceholder": "Qual produto lhe interessa?",
+      "supplierOffer": "Sua oferta",
+      "supplierOfferPlaceholder": "Quais produtos, volumes e origens você pode fornecer?",
+      "deliveryArea": "Região de entrega",
+      "deliveryAreaPlaceholder": "ex. Zurique, Berna, Ticino",
       "message": "Mensagem",
       "optional": "opcional",
+      "consent": "Concordo que meus dados sejam usados para processar minha solicitação. Mais informações na",
+      "privacyLink": "política de privacidade",
+      "requiredNote": "* Campos obrigatórios",
       "submit": "Enviar mensagem",
       "sending": "Enviando …",
-      "success": "Obrigado pela sua mensagem. Retornaremos o quanto antes.",
+      "success": "Obrigado pela sua mensagem. Entraremos em contato o mais breve possível.",
       "error": "Não foi possível enviar a mensagem. Tente novamente mais tarde ou ligue para nós.",
-      "notConfigured": "O envio de e-mails ainda não está configurado neste servidor. Ligue para +41 (0)44 448 22 50.",
       "validation": {
         "required": "Preencha este campo.",
         "email": "Informe um endereço de e-mail válido.",
         "minLength": "Escreva pelo menos {{min}} caracteres.",
-        "maxLength": "Use no máximo {{max}} caracteres."
+        "maxLength": "Use no máximo {{max}} caracteres.",
+        "consent": "Confirme a política de privacidade."
       }
     },
     "map": {
       "title": "Nossa localização",
-      "text": "Eichhof, 8558 Raperswilen, na Turgóvia – nossa unidade e câmara fria.",
+      "text": "Eichhof, 8558 Raperswilen na Turgóvia – nossa sede e câmara fria.",
       "directions": "Rota no Google Maps",
-      "iframeTitle": "Mapa do Google: Brasil Frucht Export AG, Eichhof, 8558 Raperswilen"
+      "iframeTitle": "Google Maps: Dähler Früchte, Eichhof, 8558 Raperswilen"
     }
   },
   "privacy": {
-    "eyebrow": "Informações legais",
-    "title": "Proteção de dados",
-    "intro": "Esta página descreve os dados tratados por este site. Ela não substitui uma análise jurídica pela empresa.",
+    "eyebrow": "Jurídico",
+    "title": "Privacidade",
+    "intro": "Esta página descreve quais dados este site processa. Ela não substitui uma análise jurídica pela empresa.",
     "sections": [
       {
-        "title": "Responsável pelo tratamento",
-        "text": "Brasil Frucht Export AG, Eichhof, 8558 Raperswilen, Suíça. Telefone +41 (0)44 448 22 50."
+        "title": "Controlador",
+        "text": "Dähler Früchte, Eichhof, 8558 Raperswilen, Suíça. Telefone +41 (0)44 448 22 50, info@daehler-fruechte.ch."
       },
       {
         "title": "Formulário de contato",
-        "text": "Ao enviar o formulário, você transmite nome, empresa, e-mail, telefone, assunto e mensagem. Esses dados são usados exclusivamente para responder à sua solicitação e enviados por meio do serviço de formulários Formspree. Não há criação de perfis."
+        "text": "Quando você envia o formulário, fornece seu nome, empresa, endereço de e-mail, telefone, tipo de solicitação e mensagem. Esses dados são usados exclusivamente para processar sua solicitação e transmitidos pelo serviço de formulários Formspree. Não há criação de perfis."
       },
       {
         "title": "Serviço de mapas",
-        "text": "A página de contato incorpora um mapa do Google Maps. Ao carregar, dados como o seu endereço IP são transmitidos ao Google. O fornecedor é a Google Ireland Limited."
+        "text": "A página de contato incorpora um mapa do Google Maps. Ao carregar o mapa, dados como o seu endereço IP são transmitidos ao Google. O fornecedor é a Google Ireland Limited."
       },
       {
-        "title": "Cookies e análise",
-        "text": "Este site não usa cookies de análise ou marketing. O idioma escolhido é salvo apenas localmente no seu navegador."
+        "title": "Cookies e análises",
+        "text": "Este site não utiliza cookies de análise ou marketing. O idioma escolhido é armazenado apenas localmente no seu navegador."
       }
     ],
     "back": "Voltar ao início"
   },
   "footer": {
-    "intro": "Empresa familiar independente de comércio e importação de frutas – desde 1978, de Raperswilen para toda a Suíça.",
+    "intro": "Empresa familiar independente de importação e comércio de frutas e verduras – em Raperswilen desde 1978.",
     "navigation": "Navegação",
     "contact": "Contato",
-    "language": "Idioma",
     "rights": "Todos os direitos reservados.",
-    "privacy": "Proteção de dados",
-    "note": "Imagens: alternativas de licença livre – os créditos estão no projeto em public/images/CREDITS.md."
+    "privacy": "Privacidade",
+    "note": "Imagens: alternativas com licença livre (créditos no projeto)."
   },
   "notFound": {
     "title": "Página não encontrada",

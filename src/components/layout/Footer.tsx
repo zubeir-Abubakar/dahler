@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 import { company } from "@/data/company";
 import { navigation } from "@/lib/navigation";
 import Logo from "@/components/ui/Logo";
-import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -13,16 +12,13 @@ export default function Footer() {
 
   return (
     <footer className="bg-forest text-cream">
-      <div className="container-x py-16 sm:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.5fr_0.8fr_1fr_0.9fr] lg:gap-10">
-          <div className="max-w-sm">
+      <div className="container-x py-12 sm:py-14">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr] lg:gap-12">
+          <div className="max-w-sm sm:col-span-2 lg:col-span-1">
             <Link to="/" className="inline-flex items-center" aria-label={t("common.brand")}>
-              <span className="inline-flex items-center rounded-xl px-3 py-2">
-                <Logo className="h-10 sm:h-11" />
-              </span>
+              <Logo className="h-9" />
             </Link>
-            <p className="mt-5 text-sm leading-relaxed text-cream/70">{t("footer.intro")}</p>
-            <p className="mt-4 font-display text-lg text-cream/90">{company.legalName}</p>
+            <p className="mt-4 text-sm leading-relaxed text-cream/70">{t("footer.intro")}</p>
           </div>
 
           <nav aria-label={t("footer.navigation")}>
@@ -40,14 +36,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  to="/datenschutz"
-                  className="inline-block py-0.5 text-cream/75 transition-colors duration-200 hover:text-marigold"
-                >
-                  {t("footer.privacy")}
-                </Link>
-              </li>
             </ul>
           </nav>
 
@@ -55,53 +43,52 @@ export default function Footer() {
             <h2 className="font-sans text-[0.6875rem] font-medium tracking-[0.18em] text-cream/50 uppercase">
               {t("footer.contact")}
             </h2>
-            <address className="mt-4 flex flex-col gap-2.5 text-sm not-italic text-cream/75">
-              <p>
-                {company.legalName}
-                <br />
-                {company.street}
-                <br />
-                {company.postalCode} {company.city}
-                <br />
-                {company.country}
+            <address className="mt-4 flex flex-col gap-3 text-sm not-italic text-cream/75">
+              <p className="flex items-start gap-2.5 leading-relaxed">
+                <MapPin
+                  aria-hidden="true"
+                  className="mt-0.5 h-4 w-4 shrink-0 text-cream/45"
+                  strokeWidth={1.6}
+                />
+                <span>
+                  {company.street}
+                  <br />
+                  {company.postalCode} {company.city}
+                  <br />
+                  {company.country}
+                </span>
               </p>
               <a
                 href={`tel:${company.phoneHref}`}
-                className="inline-block w-fit py-0.5 transition-colors duration-200 hover:text-marigold"
+                className="inline-flex w-fit items-center gap-2.5 py-0.5 transition-colors duration-200 hover:text-marigold"
               >
+                <Phone aria-hidden="true" className="h-4 w-4 shrink-0 text-cream/45" strokeWidth={1.6} />
                 {company.phone}
               </a>
-              <p className="text-cream/55">
-                {t("contact.details.fax")} {company.fax}
-              </p>
-              <p className="text-cream/55">
-                {t("contact.details.vat")} {company.vat}
-              </p>
+              <a
+                href={`mailto:${company.email}`}
+                className="inline-flex w-fit items-center gap-2.5 py-0.5 break-all transition-colors duration-200 hover:text-marigold"
+              >
+                <Mail aria-hidden="true" className="h-4 w-4 shrink-0 text-cream/45" strokeWidth={1.6} />
+                {company.email}
+              </a>
             </address>
-          </div>
-
-          <div>
-            <h2 className="font-sans text-[0.6875rem] font-medium tracking-[0.18em] text-cream/50 uppercase">
-              {t("footer.language")}
-            </h2>
-            <div className="mt-4">
-              <LanguageSwitcher variant="block" tone="dark" />
-            </div>
-            <Link
-              to="/kontakt"
-              className="mt-6 inline-flex items-center gap-1.5 border-b border-cream/30 pb-1 text-sm text-cream/80 transition-colors duration-200 hover:border-marigold hover:text-marigold"
-            >
-              {t("nav.contact")}
-              <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.7} />
-            </Link>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/15 pt-6 text-xs text-cream/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-white/15 pt-6 text-xs text-cream/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {company.brand} · {company.legalName}. {t("footer.rights")}
+            © {year} {company.brand}. {t("footer.rights")}
           </p>
-          <p className="max-w-md sm:text-right">{t("footer.note")}</p>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-5">
+            <Link
+              to="/datenschutz"
+              className="w-fit transition-colors duration-200 hover:text-cream"
+            >
+              {t("footer.privacy")}
+            </Link>
+            <p className="max-w-md sm:text-right">{t("footer.note")}</p>
+          </div>
         </div>
       </div>
     </footer>

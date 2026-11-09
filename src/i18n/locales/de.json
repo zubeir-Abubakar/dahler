@@ -13,7 +13,6 @@
   },
   "common": {
     "brand": "Dähler Früchte",
-    "legalName": "Brasil Frucht Export AG",
     "since": "Seit 1978",
     "readMore": "Mehr erfahren",
     "loading": "Wird gesendet …",
@@ -46,7 +45,7 @@
     },
     "contact": {
       "title": "Kontakt – Dähler Früchte",
-      "description": "Brasil Frucht Export AG, Eichhof, 8558 Raperswilen. Telefon +41 (0)44 448 22 50. Kontaktformular, Team und Anfahrtsplan."
+      "description": "Dähler Früchte, Eichhof, 8558 Raperswilen. Telefon +41 (0)44 448 22 50, info@daehler-fruechte.ch. Kontaktformular, Ansprechpartner und Anfahrt."
     },
     "privacy": {
       "title": "Datenschutz – Dähler Früchte",
@@ -59,81 +58,47 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Raperswilen, Thurgau · Seit 1978",
       "title": "Frische Exoten, jeden Tag in der ganzen Schweiz.",
-      "text": "Wir importieren und handeln mit Früchten und Gemüse aus aller Welt – und liefern sie täglich ab unserem Betrieb in Raperswilen an Grossverteiler, Grossisten und den unabhängigen Detailhandel.",
+      "text": "Wir importieren exotische Früchte und Gemüse aus aller Welt und liefern sie täglich ab Raperswilen in die ganze Schweiz.",
       "primary": "Sortiment entdecken",
-      "secondary": "Das Unternehmen kennenlernen",
+      "secondary": "Dähler Früchte entdecken",
       "imageAlt": "Marktstand mit exotischen Früchten"
     },
-    "intro": {
-      "eyebrow": "Unabhängiges Familienunternehmen",
-      "title": "Herzlich willkommen.",
-      "body": [
-        "Wir sind ein unabhängiges Familienunternehmen, welches seit 1978 erfolgreich im Handel und Import von Früchten tätig ist. Von unserem zentralen Betrieb in Raperswilen beliefern wir täglich frische Produkte an Grossverteiler, Grossisten und Engroskunden sowie unabhängige Detaillisten in der ganzen Schweiz.",
-        "Exotisches Obst und Gemüse ist unsere Leidenschaft – vom Anbau über die Reifung bis zur Lieferung an Ihre Rampe."
-      ],
-      "facts": [
-        { "label": "Gegründet", "value": "1978" },
-        { "label": "Standort", "value": "Raperswilen, Thurgau" },
-        { "label": "Lieferung", "value": "Täglich in die ganze Schweiz" }
-      ],
-      "cta": "Unsere Geschichte"
+    "highlights": {
+      "title": "Das Unternehmen auf einen Blick",
+      "founded": {
+        "label": "Gegründet",
+        "value": "1978",
+        "detail": "Unabhängiges Familienunternehmen"
+      },
+      "location": {
+        "label": "Standort",
+        "value": "Raperswilen",
+        "detail": "Thurgau, Schweiz"
+      },
+      "delivery": {
+        "label": "Lieferung",
+        "value": "Schweizweit",
+        "detail": "Täglich an Detailhandel und Grossisten"
+      }
     },
     "products": {
       "eyebrow": "Sortiment",
-      "title": "Was wir täglich bewegen",
-      "text": "Rund vierzig Exoten, Früchte und Gemüse – ausgewählt nach Reife, Farbe und Geschmack. Dazu das Passende für unsere Industriekunden.",
-      "cta": "Alle Produkte ansehen",
-      "count": "Produkte im Sortiment"
+      "title": "Was wir täglich liefern",
+      "text": "Rund vierzig Exoten, Früchte und Gemüse – ausgewählt nach Reife, Farbe und Geschmack.",
+      "cta": "Alle Produkte ansehen"
     },
-    "services": {
-      "eyebrow": "Dienstleistungen",
-      "title": "Vom Feld bis an Ihre Rampe",
-      "text": "Einkauf, Import, Reifung, Verpackung und Verteilung – als Volldienstleister übernehmen wir die ganze Kette.",
-      "cta": "Alle Services",
-      "items": [
-        {
-          "title": "Internationaler Einkauf",
-          "text": "Direkt aus der Produktion und von Vorlieferanten – die beste Politik zum besten Preis."
-        },
-        {
-          "title": "Direktimport aus Übersee",
-          "text": "Papaya, Ingwer, Mangos, Limes sowie Trauben und Äpfel aus Brasilien, per Schiff oder Flug."
-        },
-        {
-          "title": "Reifung im Haus",
-          "text": "Avocados, Mangos und Papayas im gewünschten Reifegrad – dank eigener Reifezelle."
-        },
-        {
-          "title": "Logistik und Kühlkette",
-          "text": "Eigene Lastwagen, feste Chauffeure und tägliche Belieferung aller Regionen."
-        }
-      ]
+    "about": {
+      "eyebrow": "Das Unternehmen",
+      "title": "Seit 1978 in Raperswilen.",
+      "text": "Dähler Früchte ist ein unabhängiges Familienunternehmen. Von unserem Betrieb im Thurgau beliefern wir Grossverteiler, Grossisten und den unabhängigen Detailhandel in der ganzen Schweiz.",
+      "cta": "Mehr über uns",
+      "imageAlt": "Ananasfeld"
     },
-    "philosophy": {
-      "eyebrow": "Philosophie",
-      "title": "Jedem Kunden seine Lösung.",
-      "text": "Fünf Leitmotive führen uns in unserem Handel. Unsere Produkte, Projekte und Dienstleistungen richten sich nach den Zielen unserer Kunden.",
-      "items": ["Qualität", "Preise", "Logistik", "Nachhaltigkeit", "Transparenz"],
-      "cta": "Über uns"
-    },
-    "quote": {
-      "text": "Der Kunde braucht uns nicht, aber wir brauchen den Kunden.",
-      "author": "Marius Dähler",
-      "role": "Inhaber und Geschäftsführer"
-    },
-    "story": {
-      "eyebrow": "Story",
-      "title": "Von New York über Bahia nach Raperswilen",
-      "text": "Mit achtzehn Jahren kam Marius Dähler nach New York. Eine Gelbsucht brachte ihn nach drei Monaten zurück in den Thurgau. Was folgte, war eine Geschichte von Papayas, einer Kapelle in Bahia und einer Milchfabrik.",
-      "cta": "Die ganze Geschichte lesen"
-    },
-    "gallery": {
-      "eyebrow": "Bilder",
-      "title": "Ein Blick in unsere Welt",
-      "text": "Früchte, Herkunft und Handwerk – Bilder aus dem Alltag eines Fruchthandels.",
-      "cta": "Zur Bildergalerie"
+    "contact": {
+      "title": "Haben Sie eine Anfrage?",
+      "text": "Wir prüfen Verfügbarkeit und Reifegrad und melden uns persönlich bei Ihnen.",
+      "cta": "Kontakt aufnehmen"
     }
   },
   "products": {
@@ -194,7 +159,6 @@
       "trauben": "Trauben",
       "melonen-galia": "Melonen Galia / Charentais",
       "honigmelonen": "Honigmelonen und Wassermelonen",
-      "wassermelonen": "Wassermelonen",
       "ananas-crownless": "Ananas Crownless",
       "mango-xl": "Mango Extra Large",
       "melonen-xl": "Melonen Extra Large"
@@ -339,40 +303,52 @@
     "eyebrow": "Über uns",
     "title": "Unsere Philosophie",
     "intro": "Wir verstehen uns als kundennahen, marktorientierten und innovativen Volldienstleister.",
+    "portrait": {
+      "title": "Ein Familienunternehmen aus dem Thurgau.",
+      "body": [
+        "Dähler Früchte ist ein unabhängiges Familienunternehmen in Raperswilen im Thurgau. Seit 1978 handeln und importieren wir Früchte und Gemüse aus aller Welt.",
+        "Von unserem Betrieb aus liefern wir täglich an Grossverteiler, Grossisten und den unabhängigen Detailhandel in der ganzen Schweiz. Exotische Früchte und Gemüse sind unsere Leidenschaft."
+      ],
+      "imageAlt": "Früchte aus aller Welt",
+      "cta": "Unsere Geschichte"
+    },
+    "principles": {
+      "eyebrow": "Leitmotive",
+      "title": "Was uns führt",
+      "text": "Fünf Grundsätze prägen unseren Handel – vom Einkauf bis zur Lieferung an Ihre Rampe."
+    },
     "pillars": [
       {
         "id": "innovation",
         "title": "Innovation",
-        "text": "Wir suchen Lösungen, bevor es zu Problemen kommt. Neue Ideen und Entwicklungen sind fundiert und geprüft, bevor wir sie unseren Kunden anbieten. Neugierde und einzigartige Erfahrung machen uns zu innovativen und verlässlichen Partnern."
+        "text": "Wir suchen Lösungen, bevor Probleme entstehen. Neue Ideen prüfen wir gründlich, bevor wir sie unseren Kunden anbieten."
       },
       {
         "id": "dynamic",
-        "title": "Dynamic",
-        "text": "Wir bewegen uns gerne für den Kunden. Marktveränderungen sind für uns keine Qual – im Gegenteil: Sie machen uns süchtig! Spezialwünsche oder unüberbrückbar scheinende Hindernisse bringen uns in Hochform. Wer uns kennt, wird das bestätigen."
+        "title": "Dynamik",
+        "text": "Marktveränderungen sind für uns keine Last: Sie fordern uns heraus. Spezialwünsche und scheinbar unüberwindbare Hürden bringen uns in Hochform."
       },
       {
         "id": "heart",
         "title": "Was uns am Herzen liegt",
-        "text": "Freundlich, motiviert und einfach, denken in der Sicht des Kunden und ein Bewusstsein für die Besonderheiten der Produkte – das ist das, was uns besonders auszeichnet und unseren Kunden wirklich hilft."
+        "text": "Freundlich, motiviert und unkompliziert – wir denken aus Sicht unserer Kunden und kennen die Besonderheiten jedes Produkts."
       },
       {
         "id": "global",
-        "title": "Global denken – lokal handeln",
-        "text": "Wir besorgen Ihren Bedarf in allen fünf Kontinenten. Wir sind langjährige Partner von Produzenten auf der ganzen Welt und engagieren uns bei ihnen mit Support, Logistik und Verpackung. Dank unseren treuen Kunden bieten wir den Produzenten ein attraktives Absatzpotenzial und ein Know-how. Weltweit operieren ist das Eine – vor Ort liefern das Andere. Ein Spagat, den wir beherrschen. Machen Sie den entscheidenden Schachzug mit uns."
+        "title": "Global denken, lokal handeln",
+        "text": "Wir beschaffen Ihren Bedarf auf allen fünf Kontinenten und arbeiten seit Jahren mit Produzenten weltweit zusammen. Weltweit einkaufen, vor Ort liefern."
       },
       {
         "id": "principles",
-        "title": "Jedem Kunden seine Lösung, fünf Leitmotive",
-        "text": "Qualität, Preise, Logistik, Nachhaltigkeit und Transparenz führen uns in unserem Handel. Unsere Produkte, Projekte und Dienstleistungen sind auf die Ziele unserer Kunden ausgerichtet. Wir versuchen alle Wünsche zu erfüllen – seien es besondere Preisauszeichnungen, garantierte Rückverfolgbarkeit oder spezielle Verpackungen. Für unsere Kunden setzen wir alle Ressourcen, Erfahrungen, Zeit und unser ganzes Engagement ein."
+        "title": "Jedem Kunden seine Lösung",
+        "text": "Qualität, Preise, Logistik, Nachhaltigkeit und Transparenz leiten unseren Handel. Unsere Leistungen richten sich nach den Zielen unserer Kunden."
       }
     ],
     "quote": {
       "text": "Der Kunde braucht uns nicht, aber wir brauchen den Kunden.",
+      "author": "Marius Dähler",
+      "role": "Inhaber und Geschäftsführer",
       "cta": "Lassen Sie uns Ihre Lösung gemeinsam finden."
-    },
-    "closing": {
-      "title": "Weltweite Tradition und Innovation.",
-      "text": "Die Symbiose aus Altbewährtem und neuen Trends und Werten macht unsere Philosophie erst glaubwürdig."
     }
   },
   "story": {
@@ -450,76 +426,95 @@
   "contact": {
     "eyebrow": "Kontakt",
     "title": "Sprechen wir über Ihre nächste Lieferung.",
-    "intro": "Ob Grossverteiler, Grossist, Gastronomie oder unabhängiger Detailhandel: Wir prüfen Ihren Bedarf persönlich und melden uns bei Ihnen.",
+    "intro": "Ob Grossverteiler, Grossist, Gastronomie oder unabhängiger Detailhandel: Wir prüfen Ihre Anfrage persönlich und melden uns bei Ihnen.",
     "details": {
-      "title": "Brasil Frucht Export AG",
+      "title": "Dähler Früchte",
       "address": "Adresse",
       "phone": "Telefon",
+      "email": "E-Mail",
       "fax": "Fax",
-      "vat": "MWST-Nr.",
-      "addressValue": "Eichhof, 8558 Raperswilen, Schweiz"
+      "vat": "MWST-Nummer"
     },
     "team": {
-      "title": "Team",
-      "members": [
-        {
-          "name": "Marius Dähler",
+      "eyebrow": "Ansprechpartner",
+      "title": "Ihre Ansprechpartner",
+      "intro": "Fragen zu Sortiment, Verfügbarkeit oder Lieferung? Wenden Sie sich direkt an uns – wir antworten persönlich.",
+      "phoneLabel": "Zentrale",
+      "members": {
+        "marius": {
           "role": "Inhaber / Geschäftsführer",
           "focus": "Import / Verkauf Schweiz / Europa"
         },
-        {
-          "name": "Markus Dähler jun.",
+        "markus": {
           "role": "Geschäftsleitung",
           "focus": "Verkauf Schweiz / Europa"
         },
-        {
-          "name": "Marius Dähler jun.",
-          "role": "Geschäftsführer StV. / Geschäftsleitung / Verwaltungsrat",
-          "focus": "Einkauf International und Verkauf Schweiz"
+        "marius-jun": {
+          "role": "Geschäftsführer Stv. / Geschäftsleitung / Verwaltungsrat",
+          "focus": "Einkauf international / Verkauf Schweiz"
         }
-      ]
+      }
     },
     "form": {
-      "title": "Nachricht senden",
-      "intro": "Felder mit * sind Pflichtfelder. Wir verwenden Ihre Angaben ausschliesslich zur Bearbeitung Ihrer Anfrage.",
+      "title": "Ihre Anfrage",
+      "intro": "Füllen Sie das Formular aus – wir melden uns persönlich bei Ihnen. Felder mit * sind Pflichtfelder.",
       "name": "Vollständiger Name",
-      "company": "Firma",
+      "company": "Unternehmen",
       "email": "E-Mail-Adresse",
       "phone": "Telefonnummer",
-      "subject": "Betreff",
+      "enquiry": "Anliegen",
+      "enquiryPlaceholder": "Bitte wählen",
+      "enquiryTypes": {
+        "general": "Allgemeine Anfrage",
+        "product": "Produktanfrage",
+        "availability": "Produktverfügbarkeit",
+        "partnership": "Geschäftspartnerschaft",
+        "supplier": "Lieferantenanfrage",
+        "logistics": "Logistik und Lieferung",
+        "other": "Anderes"
+      },
+      "productInterest": "Produkt",
+      "productInterestPlaceholder": "Welches Produkt interessiert Sie?",
+      "supplierOffer": "Ihr Angebot",
+      "supplierOfferPlaceholder": "Welche Produkte, Mengen und Herkunft können Sie liefern?",
+      "deliveryArea": "Lieferregion",
+      "deliveryAreaPlaceholder": "z. B. Zürich, Bern, Tessin",
       "message": "Nachricht",
       "optional": "optional",
+      "consent": "Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Weitere Informationen in der",
+      "privacyLink": "Datenschutzerklärung",
+      "requiredNote": "* Pflichtfelder",
       "submit": "Nachricht senden",
       "sending": "Wird gesendet …",
-      "success": "Vielen Dank für Ihre Nachricht. Wir melden uns so bald wie möglich bei Ihnen.",
-      "error": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später noch einmal oder rufen Sie uns an.",
-      "notConfigured": "Der E-Mail-Versand ist auf diesem Server noch nicht eingerichtet. Bitte rufen Sie uns an unter +41 (0)44 448 22 50.",
+      "success": "Vielen Dank für Ihre Nachricht. Wir melden uns so schnell wie möglich bei Ihnen.",
+      "error": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut oder rufen Sie uns an.",
       "validation": {
         "required": "Bitte füllen Sie dieses Feld aus.",
         "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
         "minLength": "Bitte schreiben Sie mindestens {{min}} Zeichen.",
-        "maxLength": "Bitte verwenden Sie höchstens {{max}} Zeichen."
+        "maxLength": "Bitte verwenden Sie höchstens {{max}} Zeichen.",
+        "consent": "Bitte bestätigen Sie die Datenschutzerklärung."
       }
     },
     "map": {
       "title": "Unser Standort",
-      "text": "Eichhof, 8558 Raperswilen im Thurgau – unser Betrieb und Kühllager.",
-      "directions": "Route in Google Maps planen",
-      "iframeTitle": "Google-Maps-Karte: Brasil Frucht Export AG, Eichhof, 8558 Raperswilen"
+      "text": "Eichhof, 8558 Raperswilen im Thurgau – unser Betrieb und unser Kühllager.",
+      "directions": "Route in Google Maps",
+      "iframeTitle": "Google Maps: Dähler Früchte, Eichhof, 8558 Raperswilen"
     }
   },
   "privacy": {
     "eyebrow": "Rechtliches",
     "title": "Datenschutz",
-    "intro": "Diese Seite beschreibt, welche Daten diese Website verarbeitet. Sie ist kein Ersatz für eine rechtliche Prüfung durch das Unternehmen.",
+    "intro": "Diese Seite beschreibt, welche Daten diese Website verarbeitet. Sie ersetzt keine rechtliche Prüfung durch das Unternehmen.",
     "sections": [
       {
         "title": "Verantwortliche Stelle",
-        "text": "Brasil Frucht Export AG, Eichhof, 8558 Raperswilen, Schweiz. Telefon +41 (0)44 448 22 50."
+        "text": "Dähler Früchte, Eichhof, 8558 Raperswilen, Schweiz. Telefon +41 (0)44 448 22 50, info@daehler-fruechte.ch."
       },
       {
         "title": "Kontaktformular",
-        "text": "Wenn Sie das Formular senden, übermitteln Sie Name, Firma, E-Mail-Adresse, Telefonnummer, Betreff und Nachricht. Diese Angaben werden ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet und über den Formulardienst Formspree übermittelt. Es findet keine Profilbildung statt."
+        "text": "Wenn Sie das Formular senden, übermitteln Sie Ihren Namen, Ihr Unternehmen, Ihre E-Mail-Adresse, Ihre Telefonnummer, das Anliegen und Ihre Nachricht. Diese Angaben werden ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet und über den Formulardienst Formspree übermittelt. Es findet kein Profiling statt."
       },
       {
         "title": "Kartendienst",
@@ -527,19 +522,18 @@
       },
       {
         "title": "Cookies und Analyse",
-        "text": "Diese Website setzt keine Analyse- oder Marketing-Cookies ein. Die gewählte Sprache wird ausschliesslich lokal in Ihrem Browser gespeichert."
+        "text": "Diese Website setzt keine Analyse- oder Marketing-Cookies. Die gewählte Sprache wird nur lokal in Ihrem Browser gespeichert."
       }
     ],
     "back": "Zurück zur Startseite"
   },
   "footer": {
-    "intro": "Unabhängiges Familienunternehmen für Handel und Import von Früchten – seit 1978 von Raperswilen in die ganze Schweiz.",
+    "intro": "Unabhängiges Familienunternehmen für Import und Handel mit Früchten und Gemüse – seit 1978 in Raperswilen.",
     "navigation": "Navigation",
     "contact": "Kontakt",
-    "language": "Sprache",
     "rights": "Alle Rechte vorbehalten.",
     "privacy": "Datenschutz",
-    "note": "Bilder: frei lizenzierte Alternativen – der Bildnachweis liegt im Projekt unter public/images/CREDITS.md."
+    "note": "Bilder: frei lizenzierte Alternativen (Bildnachweis im Projekt)."
   },
   "notFound": {
     "title": "Seite nicht gefunden",

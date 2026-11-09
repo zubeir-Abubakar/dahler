@@ -141,7 +141,12 @@ export default function LanguageSwitcher({
         className={`inline-flex min-h-9 items-center gap-1.5 rounded-full border px-2.5 text-xs font-medium tracking-wide transition-colors duration-200 ${triggerTone}`}
       >
         <Globe aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={1.6} />
-        {languages.find((language) => language.code === active)?.short ?? "DE"}
+        <span className="sm:hidden">
+          {languages.find((language) => language.code === active)?.short ?? "DE"}
+        </span>
+        <span className="hidden sm:inline">
+          {languages.find((language) => language.code === active)?.label ?? "Deutsch"}
+        </span>
         <ChevronDown
           aria-hidden="true"
           className={`h-3 w-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`}

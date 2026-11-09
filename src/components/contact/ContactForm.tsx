@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type ChangeEvent, type FormEvent } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
 
@@ -9,6 +10,17 @@ import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
  */
 export const FORMSPREE_ENDPOINT = "https://formspree.io/f/xeaeylry";
 
+const ENQUIRY_TYPES = [
+  "general",
+  "product",
+  "availability",
+  "partnership",
+  "supplier",
+  "logistics",
+  "other",
+] as const;
+
+type EnquiryType = (typeof ENQUIRY_TYPES)[number];
 type FormStatus = "idle" | "sending" | "success" | "error";
 
 interface FormValues {
@@ -16,8 +28,12 @@ interface FormValues {
   company: string;
   email: string;
   phone: string;
-  subject: string;
+  enquiry: EnquiryType | "";
+  productInterest: string;
+  supplierOffer: string;
+  deliveryArea: string;
   message: string;
+  consent: boolean;
 }
 
 type FieldErrors = Partial<Record<keyof FormValues, string>>;
@@ -27,21 +43,38 @@ const initialValues: FormValues = {
   company: "",
   email: "",
   phone: "",
-  subject: "",
+  enquiry: "",
+  productInterest: "",
+  supplierOffer: "",
+  deliveryArea: "",
   message: "",
+  consent: false,
 };
 
-/** Order used to move focus to the first invalid field. */
 const fieldOrder: Array<keyof FormValues> = [
   "name",
   "company",
   "email",
   "phone",
-  "subject",
+  "enquiry",
+  "productInterest",
+  "supplierOffer",
+  "deliveryArea",
   "message",
+  "consent",
 ];
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+
+const wantsProduct = (enquiry: FormValues["enquiry"]) =>
+  enquiry === "product" || enquiry === "availability";
+
+const isVisible = (field: keyof FormValues, values: FormValues) => {
+  if (field === "productInterest") return wantsProduct(values.enquiry);
+  if (field === "supplierOffer") return values.enquiry === "supplier";
+  if (field === "deliveryArea") return values.enquiry === "logistics";
+  return true;
+};
 
 export default function ContactForm() {
   const { t, i18n } = useTranslation();
@@ -54,77 +87,129 @@ export default function ContactForm() {
   // A ref guards against a second submit arriving before React re-renders.
   const inFlight = useRef(false);
 
-  const rules = useMemo(
-    () => ({
-      name: { required: true, min: 2, max: 120 },
-      email: { required: true, min: 5, max: 160 },
-      subject: { required: true, min: 2, max: 160 },
-      message: { required: true, min: 10, max: 4000 },
-      company: { max: 120 },
-      phone: { max: 40 },
-    }),
-    [],
-  );
+  const validateField = (field: keyof FormValues, current: FormValues): string | undefined => {
+    const required = t("contact.form.validation.required");
+    const trimmed = typeof current[field] === "string" ? current[field].trim() : "";
 
-  const validateField = (field: keyof FormValues, value: string): string | undefined => {
-    const rule = rules[field];
-    const trimmed = value.trim();
-
-    if ("required" in rule && rule.required && trimmed.length === 0) {
-      return t("contact.form.validation.required");
+    switch (field) {
+      case "consent":
+        return current.consent ? undefined : t("contact.form.validation.consent");
+      case "name":
+        if (!trimmed) return required;
+        if (trimmed.length < 2) return t("contact.form.validation.minLength", { min: 2 });
+        if (trimmed.length > 120) return t("contact.form.validation.maxLength", { max: 120 });
+        return undefined;
+      case "company":
+        if (current.enquiry === "partnership" && !trimmed) return required;
+        if (trimmed.length > 120) return t("contact.form.validation.maxLength", { max: 120 });
+        return undefined;
+      case "email":
+        if (!trimmed) return required;
+        if (!EMAIL_PATTERN.test(trimmed)) return t("contact.form.validation.email");
+        if (trimmed.length > 160) return t("contact.form.validation.maxLength", { max: 160 });
+        return undefined;
+      case "phone":
+        if (trimmed.length > 40) return t("contact.form.validation.maxLength", { max: 40 });
+        return undefined;
+      case "enquiry":
+        return current.enquiry ? undefined : required;
+      case "productInterest":
+        if (!wantsProduct(current.enquiry)) return undefined;
+        if (!trimmed) return required;
+        if (trimmed.length < 2) return t("contact.form.validation.minLength", { min: 2 });
+        if (trimmed.length > 120) return t("contact.form.validation.maxLength", { max: 120 });
+        return undefined;
+      case "supplierOffer":
+        if (current.enquiry !== "supplier") return undefined;
+        if (!trimmed) return required;
+        if (trimmed.length < 5) return t("contact.form.validation.minLength", { min: 5 });
+        if (trimmed.length > 500) return t("contact.form.validation.maxLength", { max: 500 });
+        return undefined;
+      case "deliveryArea":
+        if (current.enquiry !== "logistics") return undefined;
+        if (trimmed.length > 120) return t("contact.form.validation.maxLength", { max: 120 });
+        return undefined;
+      case "message":
+        if (!trimmed) return required;
+        if (trimmed.length < 10) return t("contact.form.validation.minLength", { min: 10 });
+        if (trimmed.length > 4000) return t("contact.form.validation.maxLength", { max: 4000 });
+        return undefined;
+      default:
+        return undefined;
     }
-    if (field === "email" && trimmed.length > 0 && !EMAIL_PATTERN.test(trimmed)) {
-      return t("contact.form.validation.email");
-    }
-    if ("min" in rule && rule.min && trimmed.length > 0 && trimmed.length < rule.min) {
-      return t("contact.form.validation.minLength", { min: rule.min });
-    }
-    if ("max" in rule && rule.max && trimmed.length > rule.max) {
-      return t("contact.form.validation.maxLength", { max: rule.max });
-    }
-    return undefined;
   };
 
-  const validateAll = (): FieldErrors => {
+  const visibleOrder = (current: FormValues) =>
+    fieldOrder.filter((field) => isVisible(field, current));
+
+  const validateAll = (current: FormValues): FieldErrors => {
     const next: FieldErrors = {};
-    fieldOrder.forEach((field) => {
-      const error = validateField(field, values[field]);
+    visibleOrder(current).forEach((field) => {
+      const error = validateField(field, current);
       if (error) next[field] = error;
     });
     return next;
   };
 
   const update = (field: keyof FormValues) => (event: { target: { value: string } }) => {
-    const value = event.target.value;
-    setValues((current) => ({ ...current, [field]: value }));
+    const next = { ...values, [field]: event.target.value };
+    setValues(next);
     if (status === "error") setStatus("idle");
     if (touched[field]) {
-      setErrors((current) => ({ ...current, [field]: validateField(field, value) }));
+      setErrors((current) => ({ ...current, [field]: validateField(field, next) }));
     }
   };
 
   const blur = (field: keyof FormValues) => () => {
     setTouched((current) => ({ ...current, [field]: true }));
-    setErrors((current) => ({ ...current, [field]: validateField(field, values[field]) }));
+    setErrors((current) => ({ ...current, [field]: validateField(field, values) }));
+  };
+
+  const updateEnquiry = (event: ChangeEvent<HTMLSelectElement>) => {
+    const next = { ...values, enquiry: event.target.value as EnquiryType | "" };
+    setValues(next);
+    setTouched((current) => ({ ...current, enquiry: true }));
+    if (status === "error") setStatus("idle");
+
+    setErrors((current) => {
+      const updated = { ...current, enquiry: validateField("enquiry", next) };
+      // Drop errors for fields the new enquiry type no longer shows.
+      (["productInterest", "supplierOffer", "deliveryArea"] as const).forEach((field) => {
+        if (!isVisible(field, next)) delete updated[field];
+      });
+      if (values.enquiry === "partnership" && next.enquiry !== "partnership") {
+        delete updated.company;
+      }
+      return updated;
+    });
+  };
+
+  const updateConsent = (event: ChangeEvent<HTMLInputElement>) => {
+    const next = { ...values, consent: event.target.checked };
+    setValues(next);
+    setTouched((current) => ({ ...current, consent: true }));
+    if (status === "error") setStatus("idle");
+    setErrors((current) => ({
+      ...current,
+      consent: validateField("consent", next),
+    }));
   };
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (inFlight.current) return;
 
-    const nextErrors = validateAll();
+    const nextErrors = validateAll(values);
     setErrors(nextErrors);
-    setTouched({
-      name: true,
-      company: true,
-      email: true,
-      phone: true,
-      subject: true,
-      message: true,
-    });
+    setTouched(
+      fieldOrder.reduce<Partial<Record<keyof FormValues, boolean>>>((all, field) => {
+        all[field] = true;
+        return all;
+      }, {}),
+    );
 
     if (Object.keys(nextErrors).length > 0) {
-      const firstInvalid = fieldOrder.find((field) => nextErrors[field]);
+      const firstInvalid = visibleOrder(values).find((field) => nextErrors[field]);
       if (firstInvalid) document.getElementById(`contact-${firstInvalid}`)?.focus();
       return;
     }
@@ -135,14 +220,26 @@ export default function ContactForm() {
     inFlight.current = true;
     setStatus("sending");
 
+    const enquiryLabel = t(`contact.form.enquiryTypes.${values.enquiry}`);
     const payload = new FormData();
     payload.append("name", values.name.trim());
     payload.append("company", values.company.trim());
     payload.append("email", values.email.trim());
     payload.append("phone", values.phone.trim());
-    payload.append("subject", values.subject.trim());
+    payload.append("enquiry_type", values.enquiry);
+    payload.append("enquiry_label", enquiryLabel);
+    if (wantsProduct(values.enquiry)) {
+      payload.append("product_interest", values.productInterest.trim());
+    }
+    if (values.enquiry === "supplier") {
+      payload.append("supplier_offer", values.supplierOffer.trim());
+    }
+    if (values.enquiry === "logistics") {
+      payload.append("delivery_area", values.deliveryArea.trim());
+    }
     payload.append("message", values.message.trim());
-    payload.append("_subject", `Website enquiry: ${values.subject.trim()}`);
+    payload.append("privacy_consent", values.consent ? "yes" : "no");
+    payload.append("_subject", `Website enquiry: ${enquiryLabel}`);
     payload.append("_gotcha", "");
     payload.append("locale", i18n.resolvedLanguage ?? i18n.language);
 
@@ -178,7 +275,7 @@ export default function ContactForm() {
     if (status === "success" || status === "error") statusRef.current?.focus();
   }, [status]);
 
-  const fieldProps = (field: keyof FormValues) => ({
+  const fieldProps = (field: "name" | "company" | "email" | "phone" | "message") => ({
     id: `contact-${field}`,
     name: field,
     value: values[field],
@@ -186,10 +283,13 @@ export default function ContactForm() {
     onBlur: blur(field),
     "aria-invalid": errors[field] ? true : undefined,
     "aria-describedby": errors[field] ? `contact-${field}-error` : undefined,
-    className: "field-input",
+    className: field === "message" ? "field-input resize-y" : "field-input",
   });
 
   const busy = status === "sending";
+  const showProduct = wantsProduct(values.enquiry);
+  const showSupplier = values.enquiry === "supplier";
+  const showDelivery = values.enquiry === "logistics";
 
   return (
     <form onSubmit={onSubmit} noValidate aria-busy={busy} className="flex flex-col gap-5">
@@ -216,7 +316,11 @@ export default function ContactForm() {
         <div>
           <label htmlFor="contact-company" className="field-label">
             {t("contact.form.company")}{" "}
-            <span className="font-normal text-stone">({t("contact.form.optional")})</span>
+            {values.enquiry === "partnership" ? (
+              <span aria-hidden="true">*</span>
+            ) : (
+              <span className="font-normal text-stone">({t("contact.form.optional")})</span>
+            )}
           </label>
           <input {...fieldProps("company")} type="text" autoComplete="organization" />
           {errors.company ? (
@@ -253,25 +357,152 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="contact-subject" className="field-label">
-          {t("contact.form.subject")} <span aria-hidden="true">*</span>
+        <label htmlFor="contact-enquiry" className="field-label">
+          {t("contact.form.enquiry")} <span aria-hidden="true">*</span>
         </label>
-        <input {...fieldProps("subject")} type="text" required />
-        {errors.subject ? (
-          <p id="contact-subject-error" className="field-error" role="alert">
-            {errors.subject}
+        <select
+          id="contact-enquiry"
+          name="enquiry"
+          value={values.enquiry}
+          onChange={updateEnquiry}
+          onBlur={blur("enquiry")}
+          aria-invalid={errors.enquiry ? true : undefined}
+          aria-describedby={errors.enquiry ? "contact-enquiry-error" : undefined}
+          className="field-input"
+          required
+        >
+          <option value="" disabled>
+            {t("contact.form.enquiryPlaceholder")}
+          </option>
+          {ENQUIRY_TYPES.map((type) => (
+            <option key={type} value={type}>
+              {t(`contact.form.enquiryTypes.${type}`)}
+            </option>
+          ))}
+        </select>
+        {errors.enquiry ? (
+          <p id="contact-enquiry-error" className="field-error" role="alert">
+            {errors.enquiry}
           </p>
         ) : null}
       </div>
+
+      {showProduct ? (
+        <div>
+          <label htmlFor="contact-productInterest" className="field-label">
+            {t("contact.form.productInterest")} <span aria-hidden="true">*</span>
+          </label>
+          <input
+            id="contact-productInterest"
+            name="productInterest"
+            type="text"
+            value={values.productInterest}
+            onChange={update("productInterest")}
+            onBlur={blur("productInterest")}
+            placeholder={t("contact.form.productInterestPlaceholder")}
+            aria-invalid={errors.productInterest ? true : undefined}
+            aria-describedby={
+              errors.productInterest ? "contact-productInterest-error" : undefined
+            }
+            className="field-input"
+          />
+          {errors.productInterest ? (
+            <p id="contact-productInterest-error" className="field-error" role="alert">
+              {errors.productInterest}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
+
+      {showSupplier ? (
+        <div>
+          <label htmlFor="contact-supplierOffer" className="field-label">
+            {t("contact.form.supplierOffer")} <span aria-hidden="true">*</span>
+          </label>
+          <textarea
+            id="contact-supplierOffer"
+            name="supplierOffer"
+            rows={3}
+            value={values.supplierOffer}
+            onChange={update("supplierOffer")}
+            onBlur={blur("supplierOffer")}
+            placeholder={t("contact.form.supplierOfferPlaceholder")}
+            aria-invalid={errors.supplierOffer ? true : undefined}
+            aria-describedby={errors.supplierOffer ? "contact-supplierOffer-error" : undefined}
+            className="field-input resize-y"
+          />
+          {errors.supplierOffer ? (
+            <p id="contact-supplierOffer-error" className="field-error" role="alert">
+              {errors.supplierOffer}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
+
+      {showDelivery ? (
+        <div>
+          <label htmlFor="contact-deliveryArea" className="field-label">
+            {t("contact.form.deliveryArea")}{" "}
+            <span className="font-normal text-stone">({t("contact.form.optional")})</span>
+          </label>
+          <input
+            id="contact-deliveryArea"
+            name="deliveryArea"
+            type="text"
+            value={values.deliveryArea}
+            onChange={update("deliveryArea")}
+            onBlur={blur("deliveryArea")}
+            placeholder={t("contact.form.deliveryAreaPlaceholder")}
+            aria-invalid={errors.deliveryArea ? true : undefined}
+            aria-describedby={errors.deliveryArea ? "contact-deliveryArea-error" : undefined}
+            className="field-input"
+          />
+          {errors.deliveryArea ? (
+            <p id="contact-deliveryArea-error" className="field-error" role="alert">
+              {errors.deliveryArea}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
 
       <div>
         <label htmlFor="contact-message" className="field-label">
           {t("contact.form.message")} <span aria-hidden="true">*</span>
         </label>
-        <textarea {...fieldProps("message")} rows={6} required className="field-input resize-y" />
+        <textarea {...fieldProps("message")} rows={6} required />
         {errors.message ? (
           <p id="contact-message-error" className="field-error" role="alert">
             {errors.message}
+          </p>
+        ) : null}
+      </div>
+
+      <div>
+        <label htmlFor="contact-consent" className="flex items-start gap-3 text-sm text-ink-soft">
+          <input
+            id="contact-consent"
+            name="consent"
+            type="checkbox"
+            checked={values.consent}
+            onChange={updateConsent}
+            onBlur={blur("consent")}
+            aria-invalid={errors.consent ? true : undefined}
+            aria-describedby={errors.consent ? "contact-consent-error" : undefined}
+            className="mt-0.5 h-4 w-4 shrink-0 accent-forest"
+          />
+          <span>
+            {t("contact.form.consent")}{" "}
+            <Link
+              to="/datenschutz"
+              className="underline decoration-line-strong underline-offset-2 transition-colors hover:text-forest"
+            >
+              {t("contact.form.privacyLink")}
+            </Link>
+          </span>
+        </label>
+        {errors.consent ? (
+          <p id="contact-consent-error" className="field-error" role="alert">
+            {errors.consent}
           </p>
         ) : null}
       </div>
@@ -298,9 +529,7 @@ export default function ContactForm() {
           )}
           {busy ? t("contact.form.sending") : t("contact.form.submit")}
         </button>
-        <p className="text-xs text-stone">
-          <span aria-hidden="true">*</span> {t("contact.form.intro").split(".")[0]}.
-        </p>
+        <p className="text-xs text-stone">{t("contact.form.requiredNote")}</p>
       </div>
 
       <div ref={statusRef} tabIndex={-1} className="outline-none">

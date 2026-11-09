@@ -22,20 +22,23 @@ export default function ProductCard({ product }: ProductCardProps) {
           decoding="async"
           width={800}
           height={1000}
+          sizes="(min-width: 1024px) 25vw, 50vw"
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="mt-3.5 flex items-baseline justify-between gap-3 border-b border-line pb-3 transition-colors duration-300 group-hover:border-ink">
-        <h3 className="type-h3">{name}</h3>
+      <div className="mt-3 flex items-start justify-between gap-3 border-b border-line pb-3 transition-colors duration-300 group-hover:border-ink">
+        <div>
+          <p className="text-[0.625rem] tracking-[0.14em] text-stone uppercase">
+            {t(`products.categories.${product.category}`)}
+          </p>
+          <h3 className="type-h3 mt-1">{name}</h3>
+        </div>
         <ArrowUpRight
           aria-hidden="true"
-          className="h-4 w-4 shrink-0 translate-y-0.5 text-stone opacity-0 transition-all duration-300 group-hover:opacity-100"
+          className="mt-1 h-4 w-4 shrink-0 text-stone opacity-0 transition-all duration-300 group-hover:opacity-100"
           strokeWidth={1.6}
         />
       </div>
-      <p className="mt-2 text-[0.6875rem] tracking-[0.14em] text-stone uppercase">
-        {t(`products.categories.${product.category}`)}
-      </p>
     </Link>
   );
 }

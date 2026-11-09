@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { ArrowUpRight, MapPin, Phone, Printer } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone, Printer } from "lucide-react";
 
 import { company } from "@/data/company";
 import { useSeo } from "@/lib/seo";
@@ -7,25 +7,18 @@ import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
 import ContactForm from "@/components/contact/ContactForm";
 
-interface TeamMember {
-  name: string;
+interface TeamCopy {
   role: string;
   focus: string;
 }
 
-const initials = (name: string) =>
-  name
-    .replace(/[a-z]+\./g, "")
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() ?? "")
-    .join("");
-
 export default function ContactPage() {
   useSeo("contact");
   const { t } = useTranslation();
-  const team = t("contact.team.members", { returnObjects: true }) as TeamMember[];
+  const teamCopy = t("contact.team.members", { returnObjects: true }) as Record<
+    string,
+    TeamCopy
+  >;
 
   return (
     <>
@@ -39,13 +32,17 @@ export default function ContactPage() {
 
       {/* ------------------------------------------------------------ form + info */}
       <section className="section-y">
-        <div className="container-x grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+        <div className="container-x grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <Reveal>
             <div className="rounded-2xl border border-line bg-paper p-7 sm:p-8">
               <h2 className="type-h3">{t("contact.details.title")}</h2>
               <address className="mt-6 flex flex-col gap-5 text-sm not-italic">
                 <div className="flex items-start gap-3">
-                  <MapPin aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-forest" strokeWidth={1.7} />
+                  <MapPin
+                    aria-hidden="true"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-forest"
+                    strokeWidth={1.7}
+                  />
                   <p className="leading-relaxed text-ink-soft">
                     {company.street}
                     <br />
@@ -55,13 +52,37 @@ export default function ContactPage() {
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Phone aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-forest" strokeWidth={1.7} />
-                  <a href={`tel:${company.phoneHref}`} className="text-ink transition-colors hover:text-forest">
+                  <Phone
+                    aria-hidden="true"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-forest"
+                    strokeWidth={1.7}
+                  />
+                  <a
+                    href={`tel:${company.phoneHref}`}
+                    className="text-ink transition-colors hover:text-forest"
+                  >
                     {company.phone}
                   </a>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Printer aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-forest" strokeWidth={1.7} />
+                  <Mail
+                    aria-hidden="true"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-forest"
+                    strokeWidth={1.7}
+                  />
+                  <a
+                    href={`mailto:${company.email}`}
+                    className="break-words text-ink transition-colors hover:text-forest"
+                  >
+                    {company.email}
+                  </a>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Printer
+                    aria-hidden="true"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-forest"
+                    strokeWidth={1.7}
+                  />
                   <p className="text-ink-soft">
                     <span className="text-stone">{t("contact.details.fax")}: </span>
                     {company.fax}
@@ -75,39 +96,87 @@ export default function ContactPage() {
                 </div>
               </dl>
             </div>
-
-            <div className="mt-10">
-              <h2 className="font-sans text-[0.6875rem] font-medium tracking-[0.18em] text-stone uppercase">
-                {t("contact.team.title")}
-              </h2>
-              <ul className="mt-5 flex flex-col divide-y divide-line border-y border-line">
-                {team.map((member) => (
-                  <li key={member.name} className="flex items-start gap-4 py-5">
-                    <span
-                      aria-hidden="true"
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-forest font-display text-sm text-cream"
-                    >
-                      {initials(member.name)}
-                    </span>
-                    <div>
-                      <p className="font-medium">{member.name}</p>
-                      <p className="mt-0.5 text-sm leading-snug text-ink-soft">{member.role}</p>
-                      <p className="mt-1 text-xs leading-snug text-stone">{member.focus}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </Reveal>
 
-          <Reveal delay={0.1} className="lg:pt-2">
+          <Reveal delay={0.08} className="lg:pt-2">
             <ContactForm />
           </Reveal>
         </div>
       </section>
 
+      {/* ---------------------------------------------------------------- team */}
+      <section className="border-t border-line bg-paper">
+        <div className="container-x section-y-sm">
+          <Reveal className="max-w-2xl">
+            <p className="eyebrow">{t("contact.team.eyebrow")}</p>
+            <h2 className="type-h2 mt-4">{t("contact.team.title")}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-ink-soft sm:text-base">
+              {t("contact.team.intro")}
+            </p>
+          </Reveal>
+
+          <ul className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {company.team.map((member, index) => {
+              const copy = teamCopy[member.id];
+              return (
+                <li key={member.id} className="h-full">
+                  <Reveal delay={index * 0.05} distance={12} className="h-full">
+                    <article className="flex h-full flex-col rounded-xl border border-line bg-cream/70 p-5">
+                      <div className="flex items-start gap-4">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          width={50}
+                          height={60}
+                          loading="lazy"
+                          className="h-16 w-[3.35rem] shrink-0 rounded-md border border-line object-cover"
+                        />
+                        <div className="min-w-0">
+                          <h3 className="type-h3 text-lg">{member.name}</h3>
+                          <p className="mt-1 text-xs leading-snug text-ink-soft">{copy?.role}</p>
+                        </div>
+                      </div>
+
+                      <p className="mt-4 text-xs leading-relaxed text-stone">{copy?.focus}</p>
+
+                      <div className="mt-auto flex flex-col gap-2.5 border-t border-line pt-4 text-xs">
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="inline-flex items-start gap-2 break-words text-ink transition-colors hover:text-forest"
+                        >
+                          <Mail
+                            aria-hidden="true"
+                            className="mt-0.5 h-3.5 w-3.5 shrink-0 text-forest"
+                            strokeWidth={1.7}
+                          />
+                          {member.email}
+                        </a>
+                        <a
+                          href={`tel:${company.phoneHref}`}
+                          className="inline-flex items-start gap-2 text-ink transition-colors hover:text-forest"
+                        >
+                          <Phone
+                            aria-hidden="true"
+                            className="mt-0.5 h-3.5 w-3.5 shrink-0 text-forest"
+                            strokeWidth={1.7}
+                          />
+                          <span>
+                            {company.phone}
+                            <span className="text-stone"> · {t("contact.team.phoneLabel")}</span>
+                          </span>
+                        </a>
+                      </div>
+                    </article>
+                  </Reveal>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
       {/* ------------------------------------------------------------------ map */}
-      <section className="border-t border-line bg-paper pb-20 sm:pb-24">
+      <section className="border-t border-line bg-paper pb-16 sm:pb-20">
         <div className="container-x">
           <div className="flex flex-col gap-4 py-10 sm:flex-row sm:items-end sm:justify-between">
             <div>

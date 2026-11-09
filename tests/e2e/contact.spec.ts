@@ -46,24 +46,30 @@ async function fillRequired(page: Page, overrides: Partial<Record<string, string
   const values = {
     "#contact-name": "Test Person",
     "#contact-email": "test@example.com",
-    "#contact-subject": "Test request",
     "#contact-message": "This is an automated test message for the contact form.",
     ...overrides,
   };
+
+  await page.locator("#contact-enquiry").selectOption("general");
+  await page.locator("#contact-consent").check();
 
   for (const [selector, value] of Object.entries(values)) {
     await page.locator(selector).fill(value);
   }
 }
 
-test("required fields and the email format are validated before sending", async ({ page }) => {
+test("required fields, consent and the email format are validated before sending", async ({
+  page,
+}) => {
   const { requestCount } = await mockFormspree(page);
   await page.goto("/kontakt");
 
   await page.getByRole("button", { name: "Nachricht senden" }).click();
   await expect(page.locator("#contact-name-error")).toBeVisible();
-  await expect(page.locator("#contact-subject-error")).toBeVisible();
+  await expect(page.locator("#contact-email-error")).toBeVisible();
+  await expect(page.locator("#contact-enquiry-error")).toBeVisible();
   await expect(page.locator("#contact-message-error")).toBeVisible();
+  await expect(page.locator("#contact-consent-error")).toBeVisible();
   await expect(page.locator("#contact-name")).toBeFocused();
   expect(requestCount()).toBe(0);
 
@@ -72,6 +78,24 @@ test("required fields and the email format are validated before sending", async 
   await expect(page.locator("#contact-email-error")).toBeVisible();
   await expect(page.locator("#contact-email")).toBeFocused();
   expect(requestCount()).toBe(0);
+});
+
+test("conditional fields follow the selected enquiry type", async ({ page }) => {
+  await page.goto("/kontakt");
+
+  await page.locator("#contact-enquiry").selectOption("supplier");
+  await expect(page.locator("#contact-supplierOffer")).toBeVisible();
+  await expect(page.locator("#contact-productInterest")).toHaveCount(0);
+
+  await page.locator("#contact-enquiry").selectOption("availability");
+  await expect(page.locator("#contact-productInterest")).toBeVisible();
+  await expect(page.locator("#contact-supplierOffer")).toHaveCount(0);
+
+  await page.locator("#contact-enquiry").selectOption("logistics");
+  await expect(page.locator("#contact-deliveryArea")).toBeVisible();
+
+  await page.locator("#contact-enquiry").selectOption("general");
+  await expect(page.locator("#contact-deliveryArea")).toHaveCount(0);
 });
 
 test("a valid form is posted to Formspree and only then shows success", async ({ page }) => {
@@ -96,13 +120,16 @@ test("a valid form is posted to Formspree and only then shows success", async ({
     "Test AG",
     "+41 44 000 00 00",
     "test@example.com",
-    "Test request",
+    "enquiry_label",
+    "Allgemeine Anfrage",
     "This is an automated test message",
+    "privacy_consent",
   ]) {
     expect(body).toContain(value);
   }
   expect(body).toContain("_gotcha");
   await expect(page.locator("#contact-name")).toHaveValue("");
+  await expect(page.locator("#contact-consent")).not.toBeChecked();
 });
 
 test("the submit button shows a loading state and blocks duplicate sends", async ({ page }) => {

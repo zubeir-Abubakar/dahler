@@ -13,7 +13,6 @@
   },
   "common": {
     "brand": "Dähler Früchte",
-    "legalName": "Brasil Frucht Export AG",
     "since": "Since 1978",
     "readMore": "Read more",
     "loading": "Sending …",
@@ -46,7 +45,7 @@
     },
     "contact": {
       "title": "Contact – Dähler Früchte",
-      "description": "Brasil Frucht Export AG, Eichhof, 8558 Raperswilen. Phone +41 (0)44 448 22 50. Contact form, team and directions."
+      "description": "Dähler Früchte, Eichhof, 8558 Raperswilen. Phone +41 (0)44 448 22 50, info@daehler-fruechte.ch. Contact form, team and directions."
     },
     "privacy": {
       "title": "Privacy – Dähler Früchte",
@@ -59,81 +58,47 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Raperswilen, Thurgau · Since 1978",
       "title": "Fresh exotics, every day across Switzerland.",
-      "text": "We import and trade fruit and vegetables from all over the world – and deliver them daily from our site in Raperswilen to retailers, wholesalers and independent grocers throughout Switzerland.",
-      "primary": "Explore the range",
-      "secondary": "Get to know the company",
+      "text": "We import exotic fruit and vegetables from around the world and deliver them daily from Raperswilen across Switzerland.",
+      "primary": "Explore our range",
+      "secondary": "Discover Dähler Früchte",
       "imageAlt": "Market stall with exotic fruit"
     },
-    "intro": {
-      "eyebrow": "Independent family business",
-      "title": "A warm welcome.",
-      "body": [
-        "We are an independent family business that has traded and imported fruit successfully since 1978. From our central site in Raperswilen we supply fresh produce every day to major retailers, wholesalers and wholesale customers as well as independent grocers across Switzerland.",
-        "Exotic fruit and vegetables are our passion – from growing to ripening to delivery at your loading bay."
-      ],
-      "facts": [
-        { "label": "Founded", "value": "1978" },
-        { "label": "Site", "value": "Raperswilen, Thurgau" },
-        { "label": "Delivery", "value": "Daily across Switzerland" }
-      ],
-      "cta": "Our story"
+    "highlights": {
+      "title": "The company at a glance",
+      "founded": {
+        "label": "Founded",
+        "value": "1978",
+        "detail": "Independent family business"
+      },
+      "location": {
+        "label": "Location",
+        "value": "Raperswilen",
+        "detail": "Thurgau, Switzerland"
+      },
+      "delivery": {
+        "label": "Delivery",
+        "value": "Switzerland",
+        "detail": "Daily to retailers and wholesalers"
+      }
     },
     "products": {
       "eyebrow": "Range",
-      "title": "What we move every day",
-      "text": "Around forty exotics, fruits and vegetables – selected for ripeness, colour and flavour. Plus what our industrial customers need.",
-      "cta": "See all products",
-      "count": "products in the range"
+      "title": "What we deliver every day",
+      "text": "Around forty exotics, fruits and vegetables – selected for ripeness, colour and flavour.",
+      "cta": "See all products"
     },
-    "services": {
-      "eyebrow": "Services",
-      "title": "From the field to your loading bay",
-      "text": "Sourcing, importing, ripening, packing and distribution – as a full-service provider we cover the entire chain.",
-      "cta": "All services",
-      "items": [
-        {
-          "title": "International sourcing",
-          "text": "Directly from production and from pre-suppliers – the best policy at the best price."
-        },
-        {
-          "title": "Direct imports from overseas",
-          "text": "Papaya, ginger, mangoes, limes as well as grapes and apples from Brazil, by sea or air."
-        },
-        {
-          "title": "In-house ripening",
-          "text": "Avocados, mangoes and papayas at the ripeness you ask for – thanks to our own ripening cell."
-        },
-        {
-          "title": "Logistics and cold chain",
-          "text": "Our own lorries, familiar drivers and daily deliveries to every region."
-        }
-      ]
+    "about": {
+      "eyebrow": "The company",
+      "title": "Based in Raperswilen since 1978.",
+      "text": "Dähler Früchte is an independent family business. From our site in Thurgau we supply major retailers, wholesalers and independent grocers across Switzerland.",
+      "cta": "More about us",
+      "imageAlt": "Pineapple field"
     },
-    "philosophy": {
-      "eyebrow": "Philosophy",
-      "title": "A solution for every customer.",
-      "text": "Five guiding principles shape our trade. Our products, projects and services are aligned with our customers' goals.",
-      "items": ["Quality", "Pricing", "Logistics", "Sustainability", "Transparency"],
-      "cta": "About us"
-    },
-    "quote": {
-      "text": "The customer doesn't need us, but we need the customer.",
-      "author": "Marius Dähler",
-      "role": "Owner and managing director"
-    },
-    "story": {
-      "eyebrow": "Story",
-      "title": "From New York to Bahia, then Raperswilen",
-      "text": "Marius Dähler arrived in New York at eighteen. Jaundice sent him back to Thurgau three months later. What followed is a story of papayas, a chapel in Bahia and a dairy.",
-      "cta": "Read the whole story"
-    },
-    "gallery": {
-      "eyebrow": "Images",
-      "title": "A look into our world",
-      "text": "Fruit, origins and craft – pictures from the everyday life of a fruit trader.",
-      "cta": "View the gallery"
+    "contact": {
+      "title": "Have a question?",
+      "text": "We check availability and ripeness and come back to you personally.",
+      "cta": "Get in touch"
     }
   },
   "products": {
@@ -194,7 +159,6 @@
       "trauben": "Grapes",
       "melonen-galia": "Galia / Charentais melons",
       "honigmelonen": "Honeydew and watermelons",
-      "wassermelonen": "Watermelons",
       "ananas-crownless": "Crownless pineapples",
       "mango-xl": "Extra large mangoes",
       "melonen-xl": "Extra large melons"
@@ -339,40 +303,52 @@
     "eyebrow": "About us",
     "title": "Our philosophy",
     "intro": "We see ourselves as a customer-focused, market-oriented and innovative full-service provider.",
+    "portrait": {
+      "title": "A family business rooted in Thurgau.",
+      "body": [
+        "Dähler Früchte is an independent family business in Raperswilen, Thurgau. We have traded in and imported fruit and vegetables from around the world since 1978.",
+        "From our site we deliver daily to major retailers, wholesalers and independent grocers across Switzerland. Exotic fruit and vegetables are our passion."
+      ],
+      "imageAlt": "Fruit from around the world",
+      "cta": "Our story"
+    },
+    "principles": {
+      "eyebrow": "Principles",
+      "title": "What guides us",
+      "text": "Five principles shape our trade – from sourcing to delivery at your loading bay."
+    },
     "pillars": [
       {
         "id": "innovation",
         "title": "Innovation",
-        "text": "We look for solutions before problems arise. New ideas and developments are sound and tested before we offer them to customers. Curiosity and unique experience make us innovative and reliable partners."
+        "text": "We look for solutions before problems arise. Every new idea is tested thoroughly before we offer it to customers."
       },
       {
         "id": "dynamic",
         "title": "Dynamic",
-        "text": "We like to move for the customer. Market changes are no burden to us – on the contrary: they make us hungry! Special requests or seemingly insurmountable obstacles bring out our best. Anyone who knows us will confirm it."
+        "text": "Market changes are not a burden to us: they push us forward. Special requests and seemingly insurmountable obstacles bring out our best."
       },
       {
         "id": "heart",
         "title": "What matters to us",
-        "text": "Friendly, motivated and straightforward, thinking from the customer's point of view and an awareness of what makes each product special – that is what sets us apart and genuinely helps our customers."
+        "text": "Friendly, motivated and straightforward: we think from the customer's point of view and know what makes each product special."
       },
       {
         "id": "global",
-        "title": "Think global – act local",
-        "text": "We source your needs across all five continents. We are long-standing partners of producers around the world and support them with know-how, logistics and packaging. Thanks to our loyal customers we offer producers attractive sales potential and expertise. Operating worldwide is one thing – delivering locally is another. A balancing act we have mastered. Make the decisive move with us."
+        "title": "Think global, act local",
+        "text": "We source your needs across all five continents and have worked with producers worldwide for years. Buying globally, delivering locally."
       },
       {
         "id": "principles",
-        "title": "A solution for every customer, five guiding principles",
-        "text": "Quality, pricing, logistics, sustainability and transparency guide our trade. Our products, projects and services are aligned with our customers' goals. We try to fulfil every wish – whether that means special price labelling, guaranteed traceability or specific packaging. For our customers we commit all our resources, experience, time and energy."
+        "title": "A solution for every customer",
+        "text": "Quality, pricing, logistics, sustainability and transparency guide our trade. Our services follow our customers' goals."
       }
     ],
     "quote": {
       "text": "The customer doesn't need us, but we need the customer.",
+      "author": "Marius Dähler",
+      "role": "Owner and managing director",
       "cta": "Let us find your solution together."
-    },
-    "closing": {
-      "title": "Worldwide tradition and innovation.",
-      "text": "The symbiosis of the proven and new trends and values is what makes our philosophy credible."
     }
   },
   "story": {
@@ -450,62 +426,81 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's talk about your next delivery.",
-    "intro": "Whether you are a major retailer, wholesaler, restaurant or independent grocer: we review your needs personally and come back to you.",
+    "intro": "Whether you are a major retailer, wholesaler, restaurant or independent grocer: we review your enquiry personally and get back to you.",
     "details": {
-      "title": "Brasil Frucht Export AG",
+      "title": "Dähler Früchte",
       "address": "Address",
       "phone": "Phone",
+      "email": "Email",
       "fax": "Fax",
-      "vat": "VAT number",
-      "addressValue": "Eichhof, 8558 Raperswilen, Switzerland"
+      "vat": "VAT number"
     },
     "team": {
-      "title": "Team",
-      "members": [
-        {
-          "name": "Marius Dähler",
+      "eyebrow": "Your contacts",
+      "title": "Your contacts",
+      "intro": "Questions about the range, availability or delivery? Contact us directly – we answer personally.",
+      "phoneLabel": "Switchboard",
+      "members": {
+        "marius": {
           "role": "Owner / managing director",
           "focus": "Imports / sales Switzerland / Europe"
         },
-        {
-          "name": "Markus Dähler jun.",
+        "markus": {
           "role": "Management",
           "focus": "Sales Switzerland / Europe"
         },
-        {
-          "name": "Marius Dähler jun.",
+        "marius-jun": {
           "role": "Deputy managing director / management / board of directors",
-          "focus": "International purchasing and sales Switzerland"
+          "focus": "International purchasing / sales Switzerland"
         }
-      ]
+      }
     },
     "form": {
-      "title": "Send a message",
-      "intro": "Fields marked with * are required. We use your details only to handle your enquiry.",
+      "title": "Your enquiry",
+      "intro": "Fill in the form and we will get back to you personally. Fields marked * are required.",
       "name": "Full name",
       "company": "Company",
       "email": "Email address",
       "phone": "Phone number",
-      "subject": "Subject",
+      "enquiry": "Enquiry type",
+      "enquiryPlaceholder": "Please choose",
+      "enquiryTypes": {
+        "general": "General enquiry",
+        "product": "Product enquiry",
+        "availability": "Product availability",
+        "partnership": "Business partnership",
+        "supplier": "Supplier enquiry",
+        "logistics": "Logistics and delivery",
+        "other": "Other"
+      },
+      "productInterest": "Product",
+      "productInterestPlaceholder": "Which product are you interested in?",
+      "supplierOffer": "Your offer",
+      "supplierOfferPlaceholder": "Which products, volumes and origins can you supply?",
+      "deliveryArea": "Delivery region",
+      "deliveryAreaPlaceholder": "e.g. Zurich, Bern, Ticino",
       "message": "Message",
       "optional": "optional",
+      "consent": "I agree that my details may be used to handle my enquiry. Further information in the",
+      "privacyLink": "privacy policy",
+      "requiredNote": "* Required fields",
       "submit": "Send message",
       "sending": "Sending …",
       "success": "Thank you for your message. We will get back to you as soon as possible.",
       "error": "The message could not be sent. Please try again later or call us.",
-      "notConfigured": "Email delivery is not configured on this server yet. Please call us on +41 (0)44 448 22 50.",
       "validation": {
         "required": "Please fill in this field.",
         "email": "Please enter a valid email address.",
         "minLength": "Please write at least {{min}} characters.",
-        "maxLength": "Please use no more than {{max}} characters."
+        "maxLength": "Please use no more than {{max}} characters.",
+        "consent": "Please confirm the privacy policy."
       }
     },
     "map": {
       "title": "Our location",
       "text": "Eichhof, 8558 Raperswilen in Thurgau – our site and cold store.",
       "directions": "Get directions in Google Maps",
-      "iframeTitle": "Google Maps: Brasil Frucht Export AG, Eichhof, 8558 Raperswilen"
+      "iframeTitle": "Google Maps: Dähler Früchte, Eichhof, 8558 Raperswilen"
     }
   },
   "privacy": {
@@ -515,11 +510,11 @@
     "sections": [
       {
         "title": "Controller",
-        "text": "Brasil Frucht Export AG, Eichhof, 8558 Raperswilen, Switzerland. Phone +41 (0)44 448 22 50."
+        "text": "Dähler Früchte, Eichhof, 8558 Raperswilen, Switzerland. Phone +41 (0)44 448 22 50, info@daehler-fruechte.ch."
       },
       {
         "title": "Contact form",
-        "text": "When you send the form you provide your name, company, email address, phone number, subject and message. These details are used solely to handle your enquiry and are transmitted through the Formspree form service. No profiling takes place."
+        "text": "When you send the form you provide your name, company, email address, phone number, enquiry type and message. These details are used solely to handle your enquiry and are transmitted through the Formspree form service. No profiling takes place."
       },
       {
         "title": "Map service",
@@ -533,13 +528,12 @@
     "back": "Back to home"
   },
   "footer": {
-    "intro": "An independent family business trading and importing fruit – from Raperswilen across Switzerland since 1978.",
+    "intro": "An independent family business importing and trading fruit and vegetables – based in Raperswilen since 1978.",
     "navigation": "Navigation",
     "contact": "Contact",
-    "language": "Language",
     "rights": "All rights reserved.",
     "privacy": "Privacy",
-    "note": "Images: free-licensed alternatives – credits are in the project under public/images/CREDITS.md."
+    "note": "Images: free-licensed alternatives (credits in the project)."
   },
   "notFound": {
     "title": "Page not found",
